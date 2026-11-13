@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qualif'Mandats Nov. 2026 — Trouver des vendeurs légalement : observatoire DVF, consentements, bailleurs</title>
+<style>
+
+  :root{
+    --brand:#1d4ed8; --brand-d:#173ea9; --brand-l:#e6edfd;
+    --ink:#0f172a; --muted:#475569; --line:#d6dde6; --bg:#f4f6f9;
+    --ok:#0f7a4a; --ok-bg:#e6f5ec; --warn:#9a5b00; --warn-bg:#fff4dd; --bad:#b4232c; --bad-bg:#fdecee; --info-bg:#eaf2fc; --amber:#f5b301;
+  }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);font-size:15px;line-height:1.45;padding-bottom:80px}
+  button,input,select,textarea{font:inherit;color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 14px}
+  header{background:var(--brand);color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  .hrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0}
+  .logo{display:flex;align-items:center;gap:12px;min-width:0}
+  .logo .ic{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:22px;flex:none}
+  .logo h1{margin:0;font-size:20px;font-weight:800} .logo p{margin:2px 0 0;font-size:12px;opacity:.88}
+  .badge{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:rgba(255,255,255,.2);border-radius:99px;padding:2px 9px;margin-left:6px;vertical-align:middle;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .hbtns{display:flex;gap:6px;flex:none}
+  .btn{border:1px solid var(--line);background:#fff;border-radius:11px;padding:8px 13px;font-weight:700;font-size:13px;cursor:pointer}
+  .btn:hover{background:#f1f5f9}
+  .btn.pri{background:var(--brand);color:#fff;border-color:var(--brand)} .btn.pri:hover{background:var(--brand-d)}
+  .btn.amb{background:var(--amber);border-color:var(--amber);color:#111}
+  .btn.ghost{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff}
+  .btn.red{color:var(--bad);border-color:#f0c2c6}
+  .btn.sm{padding:5px 10px;font-size:12px;border-radius:9px}
+  .btn.xs{padding:3px 8px;font-size:11.5px;border-radius:8px}
+  nav.tabs{display:flex;gap:6px;padding:8px 0 10px;border-top:1px solid rgba(255,255,255,.18);overflow-x:auto}
+  nav.tabs button{background:transparent;border:0;color:#fff;opacity:.8;padding:8px 14px;border-radius:11px;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;white-space:nowrap}
+  nav.tabs button.on{background:#fff;color:var(--brand);opacity:1}
+  .student{margin:14px 0 10px;background:linear-gradient(90deg,#fff8e6,#fff,#fff8e6);border:1px solid #f0d27a;border-radius:16px;padding:12px 14px;display:flex;gap:12px;align-items:flex-start}
+  .student .ic{width:40px;height:40px;border-radius:12px;background:#e39b00;color:#fff;display:flex;align-items:center;justify-content:center;font-size:19px;flex:none}
+  .student b{font-size:15px} .student small{display:block;color:var(--muted);font-size:11.5px;margin-top:3px}
+  .notice{background:#e7ebf0;border:1px solid #cdd5df;border-radius:12px;padding:8px 12px;font-size:12px;color:#334155;margin-bottom:12px}
+  .modebar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 12px;margin-bottom:14px;font-size:13px}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .seg button{border:0;background:#fff;padding:6px 12px;font-weight:700;font-size:12.5px;cursor:pointer}
+  .seg button.on{background:var(--brand);color:#fff}
+  .classe-tag{background:#fde68a;border-radius:8px;padding:3px 8px;font-weight:800;font-size:11.5px;display:none}
+  body.classe .classe-tag{display:inline-block}
+  .tab{display:none} .tab.on{display:block}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .grid-l{display:grid;grid-template-columns:340px 1fr;gap:14px}
+  .grid2>div,.grid-l>div{min-width:0}
+  @media (max-width:950px){.grid2,.grid-l{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+  .card h2{margin:0 0 10px;font-size:17px;font-weight:800} .card h3{margin:14px 0 6px;font-size:14.5px}
+  .sub{color:var(--muted);font-size:13px;margin:-4px 0 10px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .row4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  @media (max-width:600px){.row,.row3,.row4{grid-template-columns:1fr 1fr}}
+  label.f{display:block;font-size:12px;font-weight:700;color:#334155;margin:8px 0 3px}
+  input[type=text],input[type=date],input[type=number],input[type=month],select,textarea{width:100%;border:1px solid #c7d0db;border-radius:10px;padding:8px 10px;background:#fff;font-size:14px}
+  textarea{min-height:70px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--brand-l);border-color:var(--brand)}
+  .chk{display:flex;gap:8px;align-items:flex-start;font-size:13px;margin:6px 0} .chk input{margin-top:3px}
+  .pills{display:flex;flex-wrap:wrap;gap:6px}
+  .pills button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+  .pills button.on{background:var(--brand);border-color:var(--brand);color:#fff}
+  .rule{border-radius:12px;padding:10px 12px;margin:8px 0;font-size:13.5px;border:1px solid}
+  .rule b{display:block;margin-bottom:2px}
+  .rule.ok{background:var(--ok-bg);border-color:#b7e2c8;color:#0b4f31}
+  .rule.warn{background:var(--warn-bg);border-color:#f1d48f;color:#6b3f00}
+  .rule.bad{background:var(--bad-bg);border-color:#f0c2c6;color:#7d1219}
+  .rule.info{background:var(--info-bg);border-color:#c6d9f2;color:#163b6d}
+  .muted{color:var(--muted)} .small{font-size:12px}
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  table.t{width:100%;border-collapse:collapse;font-size:13px}
+  table.t th,table.t td{border-bottom:1px solid var(--line);padding:5px 4px;text-align:left;vertical-align:middle}
+  table.t th{font-size:10.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);background:#f8fafc}
+  table.t td.num,table.t th.num{text-align:right;white-space:nowrap}
+  table.t input[type=number]{width:72px;text-align:right;padding:4px 5px;font-size:12.5px;border-radius:7px}
+  table.t input[type=text]{padding:4px 5px;font-size:12.5px;border-radius:7px;width:90px}
+  table.t tfoot td{font-weight:800;background:#f8fafc}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+  @media (max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;position:relative}
+  .kpi .v{font-size:21px;font-weight:800;line-height:1.1} .kpi .l{font-size:11.5px;color:var(--muted);font-weight:700}
+  .kpi .o{font-size:11.5px;margin-top:3px}
+  .kpi.good{border-color:#b7e2c8;background:#f6fcf8} .kpi.low{border-color:#f0c2c6;background:#fffafa}
+  .gauge{height:14px;border-radius:7px;background:#eef1f5;overflow:hidden;position:relative;margin:6px 0}
+  .gauge i{position:absolute;left:0;top:0;bottom:0;background:var(--brand)}
+  .gauge u{position:absolute;top:0;bottom:0;width:2px;background:#f59e0b}
+  .chart{width:100%;background:#fff}
+  .news ul{margin:4px 0 0;padding-left:20px} .news li{margin:3px 0}
+  .src{font-size:11.5px;color:var(--muted);margin-top:6px}
+  .pitch{background:#0f1f4d;color:#fff;border-radius:14px;padding:14px 16px;font-size:15px;line-height:1.55}
+  .pitch em{color:#fde68a;font-style:normal;font-weight:700}
+  .qa dt{font-weight:800;margin-top:8px} .qa dd{margin:2px 0 0 0;color:#334155}
+  .never li{color:var(--bad)}
+  .item{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0;background:#fff}
+  .item .h{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+  .corr{background:#f0fdf4;border:1px solid #b7e2c8;border-radius:12px;padding:10px 12px;margin-top:10px;font-size:13.5px;white-space:pre-wrap}
+  .msgbox{white-space:pre-wrap;background:#f8fafc;border:1px dashed #b8c4d2;border-radius:10px;padding:8px 10px;font-size:13px}
+  .classe-only{display:none} body.classe .classe-only{display:block}
+  .bnav{display:none}
+  @media (max-width:760px){
+    nav.tabs{display:none}
+    .bnav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);z-index:20}
+    .bnav button{border:0;background:#fff;padding:8px 2px 10px;font-size:10.5px;font-weight:700;color:#64748b}
+    .bnav button span{display:block;font-size:18px} .bnav button.on{color:var(--brand)}
+    .hbtns .hide-m{display:none}
+  }
+  #toast{position:fixed;top:14px;right:14px;left:14px;display:flex;justify-content:flex-end;pointer-events:none;z-index:60}
+  #toast div{background:#0f172a;color:#fff;padding:10px 14px;border-radius:12px;font-size:13px;font-weight:600;max-width:420px;opacity:0;transform:translateY(-6px);transition:.25s}
+  #toast div.show{opacity:1;transform:none}
+  #dlg{position:fixed;inset:0;background:rgba(15,23,42,.45);display:none;align-items:center;justify-content:center;z-index:70;padding:14px}
+  #dlg.show{display:flex} #dlg .box{background:#fff;border-radius:16px;padding:18px;max-width:460px;width:100%} #dlg p{margin:0 0 14px}
+  @media print{
+    header nav,.bnav,.hbtns,.modebar,.no-print,#toast{display:none!important}
+    body{background:#fff;padding:0} .card{box-shadow:none;break-inside:avoid}
+    .tab{display:none!important} .tab.on{display:block!important}
+  }
+
+  :root{--brand:#15803d}
+  .bnav{grid-template-columns:repeat(8,1fr)!important}
+  #printZone{display:none}
+  @media print{body.print-zone>*:not(#printZone){display:none!important} body.print-zone #printZone{display:block!important}}
+  #printZone{font-size:12.5px;color:#111;padding:6mm}
+  #printZone table{width:100%;border-collapse:collapse;margin:8px 0} #printZone th,#printZone td{border:1px solid #bbb;padding:5px 6px;text-align:left}
+
+</style>
+</head>
+<body>
+<div id="toast"><div id="toastMsg"></div></div>
+<div id="dlg"><div class="box"><p id="dlgText"></p><div class="actions" style="justify-content:flex-end"><button class="btn" id="dlgNo">Annuler</button><button class="btn pri" id="dlgYes">Confirmer</button></div></div></div>
+<div id="printZone"></div>
+<header>
+  <div class="wrap">
+    <div class="hrow">
+      <div class="logo">
+        <div class="ic">🏡</div>
+        <div style="min-width:0">
+          <h1>Qualif'Mandats 2026 <span class="badge" id="hdrShop">Entreprise partenaire</span></h1>
+          <p>Trouver des vendeurs sans appel à froid : observatoire des prix, consentements, bailleurs, réseau</p>
+        </div>
+      </div>
+      <div class="hbtns"><button class="btn amb" onclick="go('pitch')">Personnaliser</button></div>
+    </div>
+    <nav class="tabs">
+      <button id="t-obs" onclick="go('obs')">1. Observatoire</button>
+      <button id="t-est" onclick="go('est')">2. Estimation</button>
+      <button id="t-cons" onclick="go('cons')">3. Consentements</button>
+      <button id="t-bail" onclick="go('bail')">4. Bailleurs</button>
+      <button id="t-doss" onclick="go('doss')">5. Dossier</button>
+      <button id="t-res" onclick="go('res')">6. Réseau</button>
+      <button id="t-reperes" onclick="go('reperes')">7. Repères</button>
+      <button id="t-pitch" onclick="go('pitch')">8. Pitch &amp; entraînement</button>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="student">
+    <div class="ic">🎓</div>
+    <div>
+      <b id="bnStudent">Présenté par un élève de Bac Pro MCV</b>
+      <div class="small" style="font-weight:700;color:#334155" id="bnShop">Outil configuré pour votre entreprise</div>
+      <small>Outil conçu par M. Nguon, professeur d'éco-gestion au Lycée Georges Brassens (Villepinte), avec ses élèves. Ancien directeur d'agence bancaire et courtier, il en vérifie le contenu.</small>
+    </div>
+  </div>
+  <div class="notice"><b>Outil gratuit pour les agences immobilières.</b> Prix réels publics (DVF) transformés en statistiques, formulaire et registre des consentements au démarchage, simulateur pour les bailleurs, suivi de la prospection. Il ne collecte aucune donnée sur internet à propos des particuliers. Les données restent sur cet appareil.</div>
+  <div class="modebar no-print">
+    <b>Mode :</b>
+    <span class="seg"><button id="mPro" onclick="setMode('pro')">Entreprise</button><button id="mClasse" onclick="setMode('classe')">Classe (cas fictif)</button></span>
+    <span class="classe-tag" id="classeTag">MODE CLASSE</span>
+  </div>
+  <section class="tab" id="tab-obs">
+
+    <div class="card">
+      <h2>1. Charger les ventes réelles de la commune</h2>
+      <p class="sub">Données publiques « Demandes de valeurs foncières » (DVF, DGFiP), mises à jour en avril et en octobre. Seules des statistiques sont produites : jamais de liste de vendeurs.</p>
+      <div class="row4"><div><label class="f">Code postal ou nom de la commune</label><input type="text" id="cQ" placeholder="ex. 93420"></div><div><label class="f">Commune</label><select id="cSel"><option value="">—</option></select></div><div><label class="f">Code commune (INSEE)</label><input type="text" id="cCode" placeholder="ex. 93078"></div><div><label class="f">Années</label><select id="cYears"><option value="5">5 dernières années</option><option value="3">3 dernières années</option><option value="2">2 dernières années</option></select></div></div>
+      <div class="actions"><button class="btn sm" onclick="findCommune()">Chercher la commune</button><button class="btn pri" onclick="loadDVF()">Charger les ventes depuis data.gouv.fr</button><label class="btn" style="display:inline-block">Importer des fichiers CSV<input type="file" accept=".csv,.txt" multiple id="impDVF" style="display:none"></label><button class="btn red sm" onclick="clearDVF()">Tout effacer</button></div>
+      <div id="loadMsg" class="small" style="margin-top:8px"></div>
+      <div id="comBox" style="margin-top:10px"></div>
+    </div>
+    <div class="card" id="cmpBox" style="display:none"><h2>Comparer les communes enregistrées</h2><div style="overflow-x:auto" id="tCmp"></div></div>
+    <div class="kpis" id="kpiO"></div>
+    <div class="grid2">
+      <div class="card"><h2>Prix médian au m² par année</h2><div id="chYear"></div></div>
+      <div class="card"><h2>Carte des ventes</h2><div id="map"></div><p class="small muted" style="margin:4px 0 0">Chaque point est une vente ; couleur du moins cher (bleu) au plus cher (rouge) au m². Usage interne.</p></div>
+    </div>
+    <div class="grid2">
+      <div class="card"><h2>Selon le nombre de pièces</h2><div style="overflow-x:auto" id="tPieces"></div></div>
+      <div class="card"><h2>Par rue (au moins 5 ventes)</h2><div style="overflow-x:auto" id="tRues"></div></div>
+    </div>
+
+    <div class="card" id="enCard">
+      <h2>Énergie (DPE) et loyers de la commune</h2>
+      <p class="sub" id="enCom"></p>
+      <div class="actions" style="margin-top:0"><button class="btn pri" onclick="loadDPE()">Charger les DPE (ADEME)</button><button class="btn pri" onclick="loadLoy()">Charger les loyers (carte des loyers)</button><label class="btn" style="display:inline-block">Importer un fichier DPE (CSV)<input type="file" accept=".csv,.txt" id="impDPE" style="display:none"></label><label class="btn" style="display:inline-block">Importer un fichier loyers (CSV)<input type="file" accept=".csv,.txt" multiple id="impLoy" style="display:none"></label></div>
+      <div id="enMsg" class="small" style="margin-top:8px"></div>
+      <div class="grid2" style="margin-top:8px">
+        <div><h3>Les DPE réalisés depuis juillet 2021</h3><div id="dpeBox"><p class="muted small">Aucun DPE chargé pour cette commune.</p></div></div>
+        <div><h3>Les loyers de marché et la rentabilité</h3><div id="loyBox"><p class="muted small">Aucun loyer chargé pour cette commune.</p></div>
+          <details style="margin-top:6px"><summary class="small" style="cursor:pointer;font-weight:700">Saisir les loyers à la main</summary>
+            <p class="small">Lisez les loyers sur la <a href="https://www.ecologie.gouv.fr/carte-des-loyers" target="_blank" rel="noopener">carte des loyers du ministère</a> (en € par m², charges comprises).</p>
+            <div class="row4"><div><label class="f">Appartements</label><input type="number" step="0.1" id="lmApp"></div><div><label class="f">T1-T2</label><input type="number" step="0.1" id="lmApp12"></div><div><label class="f">T3 et plus</label><input type="number" step="0.1" id="lmApp3"></div><div><label class="f">Maisons</label><input type="number" step="0.1" id="lmMai"></div></div>
+            <div class="actions"><button class="btn sm pri" onclick="saveLoyMan()">Enregistrer</button></div></details>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>2. La page « Observatoire du quartier » à distribuer</h2>
+      <div class="row3"><div><label class="f">Titre</label><input type="text" id="oTitre"></div><div><label class="f">Appel à l'action</label><input type="text" id="oCta"></div><div><label class="f">Contact de l'agence</label><input type="text" id="oContact"></div></div>
+      <div class="row3"><div><label class="f">QR code vers votre formulaire (image)</label><input type="file" accept="image/*" id="oQr"></div><div><label class="f">Logo de l'agence (image, facultatif)</label><input type="file" accept="image/*" id="oLogo"></div><div><label class="f">Inclure le détail par rue</label><select id="oRues"><option value="1">Oui (rues d'au moins 5 ventes)</option><option value="0">Non</option></select></div></div>
+      <div class="row3"><div><label class="f">Inclure les DPE de la commune</label><select id="oDpe"><option value="0">Non</option><option value="1">Oui (si chargés)</option></select></div><div><label class="f">Inclure le loyer de marché</label><select id="oLoy"><option value="0">Non</option><option value="1">Oui (si chargé)</option></select></div><div></div></div>
+      <div class="actions"><button class="btn pri" onclick="printObs()">Imprimer l'observatoire</button></div>
+      <div id="obsPrev" style="margin-top:10px;border:1px solid var(--line);border-radius:12px;padding:14px"></div>
+    </div>
+  </section>
+  <section class="tab" id="tab-est">
+
+    <div class="grid2">
+      <div class="card">
+        <h2>Le bien à estimer</h2>
+        <div class="row3"><div><label class="f">Type</label><select id="eType"><option value="A">Appartement</option><option value="M">Maison</option></select></div><div><label class="f">Surface habitable (m²)</label><input type="number" min="9" id="eSurf"></div><div><label class="f">Pièces</label><input type="number" min="1" id="ePieces"></div></div>
+        <label class="f">Adresse (pour trouver les ventes proches)</label><input type="text" id="eAdr" placeholder="ex. 12 rue des Lilas 93420 Villepinte">
+        <div class="row3"><div><label class="f">Rayon</label><select id="eRay"><option value="400">400 m</option><option value="800" selected>800 m</option><option value="1500">1,5 km</option><option value="99999">Toute la commune</option></select></div><div><label class="f">Ventes depuis</label><select id="ePer"><option value="2">2 ans</option><option value="3" selected>3 ans</option><option value="5">5 ans</option></select></div><div><label class="f">Écart de surface accepté</label><select id="eTol"><option value="0.2">± 20 %</option><option value="0.3" selected>± 30 %</option><option value="0.5">± 50 %</option></select></div></div>
+        <h3>Ajustements (jugement du professionnel)</h3>
+        <div class="row3"><div><label class="f">État</label><select id="eEtat"><option value="-0.1">Travaux importants (−10 %)</option><option value="-0.05">À rafraîchir (−5 %)</option><option value="0" selected>Bon état (0 %)</option><option value="0.05">Refait à neuf (+5 %)</option></select></div><div><label class="f">Classe énergie (DPE)</label><select id="eDpe"><option value="-0.08">F ou G (−8 %)</option><option value="-0.03">E (−3 %)</option><option value="0" selected>D (0 %)</option><option value="0.03">A, B ou C (+3 %)</option></select></div><div><label class="f">Atouts ou défauts</label><select id="eAtout"><option value="-0.05">Défaut marqué (bruit, vis-à-vis) −5 %</option><option value="0" selected>Rien de particulier</option><option value="0.04">Atout (extérieur, vue, parking) +4 %</option></select></div></div>
+        <div class="actions"><button class="btn pri" onclick="estimate()">Trouver les ventes comparables</button></div>
+        <div id="geoMsg" class="small muted" style="margin-top:6px"></div>
+      </div>
+      <div>
+        <div class="card"><h2>Fourchette indicative</h2><div id="estBox"><p class="muted small">Chargez les ventes (onglet 1), puis décrivez le bien.</p></div></div>
+        <div class="card"><h2>Les ventes comparables (usage interne)</h2><div style="overflow-x:auto" id="compList"></div><p class="small muted">À utiliser en rendez-vous comme argument ; ne pas publier cette liste.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="tab" id="tab-cons">
+
+    <div class="grid2">
+      <div class="card">
+        <h2>Le formulaire de consentement</h2>
+        <p class="sub">Depuis le 11 août 2026, on n'appelle un particulier pour lui proposer ses services que s'il a donné son accord préalable, avec cinq mentions obligatoires.</p>
+        <div class="row"><div><label class="f">Services proposés</label><input type="text" id="fServ"></div><div><label class="f">Validité de l'accord (mois, 12 au maximum)</label><input type="number" min="1" max="12" id="fVal"></div></div>
+        <div class="row"><div><label class="f">Pour retirer son accord : téléphone</label><input type="text" id="fTel"></div><div><label class="f">Pour retirer son accord : e-mail</label><input type="text" id="fMail"></div></div>
+        <label class="f">Prestataire agissant pour l'agence (facultatif)</label><input type="text" id="fPresta">
+        <div class="msgbox" id="formTxt" style="margin-top:10px"></div>
+        <div class="actions"><button class="btn pri" onclick="printForm()">Imprimer le formulaire</button><button class="btn" onclick="copyText(el('formTxt').innerText,'Texte copié pour le site')">Copier le texte pour le site</button></div>
+      </div>
+      <div>
+        <div class="card" style="border-color:var(--brand)">
+          <h2>☎️ Puis-je appeler cette personne ?</h2>
+          <input type="text" id="qCall" placeholder="Nom ou numéro de téléphone">
+          <div id="callRes" style="margin-top:8px"></div>
+        </div>
+        <div class="card"><h2>À surveiller</h2><div id="consAl"></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Le registre des consentements</h2>
+      <div style="overflow-x:auto"><table class="t" id="regTable"></table></div>
+      <details style="margin-top:10px" id="regAddBox"><summary style="cursor:pointer;font-weight:800">+ Enregistrer un consentement</summary>
+        <div class="row3"><div><label class="f">Nom</label><input type="text" id="rNom"></div><div><label class="f">Téléphone</label><input type="text" id="rTel"></div><div><label class="f">Date et heure</label><input type="datetime-local" id="rDate"></div></div>
+        <div class="row3"><div><label class="f">Origine</label><select id="rOrig"><option value="web">Formulaire sur le site</option><option value="papier">Formulaire papier</option><option value="qr">QR code de l'observatoire</option><option value="atelier">Atelier ou journée estimation</option><option value="ambassadeur">Remis par un ambassadeur ou prescripteur</option><option value="oral">Accord oral</option></select></div><div><label class="f">Objet de l'accord</label><select id="rObj"><option value="demarch">Être appelé pour les services de l'agence</option><option value="estim">Seulement traiter sa demande d'estimation</option></select></div><div><label class="f">Conseiller</label><input type="text" id="rCons"></div></div>
+        <label class="chk"><input type="checkbox" id="rCoche"> <span>La personne a coché « oui » elle-même ou dit « oui » clairement (pas de case pré-cochée)</span></label>
+        <label class="chk"><input type="checkbox" id="rMent"> <span>Les cinq mentions obligatoires lui ont été présentées</span></label>
+        <label class="f">Preuve (référence du formulaire, compte rendu horodaté d'un accord oral…)</label><input type="text" id="rPreuve">
+        <div class="actions"><button class="btn pri" onclick="addCons()">Enregistrer</button></div>
+      </details>
+      <div class="actions no-print"><button class="btn" onclick="exportReg()">Exporter le registre (CSV)</button></div>
+    </div>
+  </section>
+  <section class="tab" id="tab-bail">
+
+    <div class="grid2">
+      <div class="card">
+        <h2>La situation du propriétaire bailleur</h2>
+        <div class="row4"><div><label class="f">Type</label><select id="bTyp"><option value="A">Appartement</option><option value="M">Maison</option></select></div><div><label class="f">Pièces</label><input type="number" min="1" id="bPc"></div><div><label class="f">Classe énergie actuelle</label><select id="bDpe"><option>G</option><option selected>F</option><option>E</option><option>D</option></select></div><div><label class="f">Surface (m²)</label><input type="number" id="bSurf"></div></div>
+        <div class="row"><div><label class="f">Loyer mensuel hors charges</label><input type="number" id="bLoyer"></div><div><label class="f">Provision de charges locatives (€/mois)</label><input type="number" id="bProv"></div></div>
+        <div class="row3"><div><label class="f">Valeur de vente actuelle</label><input type="number" id="bVal"></div><div><label class="f">Charges annuelles du bailleur (taxe foncière, copro…)</label><input type="number" id="bCh"></div><div><label class="f">Horizon de comparaison (années)</label><input type="number" min="1" max="10" id="bH"></div></div>
+        <h3>Si le propriétaire rénove</h3>
+        <div class="row4"><div><label class="f">Coût des travaux</label><input type="number" id="bTrav"></div><div><label class="f">Aides estimées</label><input type="number" id="bAides"></div><div><label class="f">Durée des travaux (mois sans loyer)</label><input type="number" id="bDur"></div><div><label class="f">Plus-value après travaux (%)</label><input type="number" id="bPv"></div></div>
+        <div class="row3"><div><label class="f">Décote d'une passoire à la revente (%)</label><input type="number" id="bDec"></div><div><label class="f">Honoraires de vente (%)</label><input type="number" step="0.1" id="bHon"></div><div><label class="f">Date de comparaison</label><input type="date" id="bDate"></div></div>
+        <div class="actions"><button class="btn sm" onclick="valFromObs()">Valeur à partir de l'observatoire</button><button class="btn sm" onclick="loyFromObs()">Loyer de marché (carte des loyers)</button></div>
+      </div>
+      <div>
+        <div class="card"><h2>Repères du quartier</h2><div id="bailRep"><p class="muted small">Chargez les DPE et les loyers de la commune (onglet 1).</p></div></div>
+        <div class="card"><h2>Les trois options sur la période</h2><div id="bailRes"></div></div>
+        <div class="card"><h2>À dire au propriétaire</h2><div class="msgbox" id="bailTxt"></div><div class="actions"><button class="btn pri" onclick="printBail()">Imprimer la fiche</button></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="tab" id="tab-doss">
+
+    <div class="card">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end"><div style="flex:1;min-width:220px"><label class="f">Dossier</label><select id="dSel"></select></div><button class="btn sm pri" onclick="newDoss()">+ Nouveau dossier</button><button class="btn sm red" onclick="delDoss()">Supprimer</button></div>
+    </div>
+    <div class="kpis" id="kpiD"></div>
+    <div class="grid2">
+      <div class="card">
+        <h2>Le bien et le mandat</h2>
+        <div class="row"><div><label class="f">Propriétaire ou nom du dossier</label><input type="text" id="dNom"></div><div><label class="f">Mandat</label><select id="dMand"><option value="vente">Vente</option><option value="location">Location</option></select></div></div>
+        <label class="f">Adresse du bien</label><input type="text" id="dAdr">
+        <div class="row3"><div><label class="f">Bien</label><select id="dBien"><option value="appart">Appartement en copropriété</option><option value="maison">Maison individuelle</option><option value="immeuble">Immeuble à un seul propriétaire</option></select></div><div><label class="f">Permis de construire</label><select id="dCons"><option value="av49">Avant 1949</option><option value="av97">De 1949 à juin 1997</option><option value="ap97">Juillet 1997 ou après</option><option value="nsp">Je ne sais pas</option></select></div><div><label class="f">Classe énergie (DPE)</label><select id="dDpe"><option value="">Inconnue</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select></div></div>
+        <div class="row3"><div><label class="f">Installation de gaz</label><select id="dGaz"><option value="non">Aucune</option><option value="m15">Moins de 15 ans</option><option value="p15">Plus de 15 ans</option></select></div><div><label class="f">Installation électrique</label><select id="dElec"><option value="m15">Moins de 15 ans</option><option value="p15">Plus de 15 ans</option></select></div><div><label class="f">Assainissement</label><select id="dAss"><option value="coll">Tout-à-l'égout</option><option value="anc">Fosse, micro-station (non collectif)</option></select></div></div>
+        <div class="row"><div><label class="f">Zone termites (arrêté préfectoral)</label><select id="dTerm"><option value="nsp">À vérifier</option><option value="oui">Oui</option><option value="non">Non</option></select></div><div><label class="f">Zone de bruit d'un aérodrome</label><select id="dBruit"><option value="nsp">À vérifier</option><option value="oui">Oui</option><option value="non">Non</option></select></div></div>
+      </div>
+      <div class="card" style="border-color:var(--brand)">
+        <h2>🗺️ L'état des risques (ERP)</h2>
+        <p class="small" style="margin-top:0">Obligatoire pour toute vente ou location, daté de <b>moins de 6 mois</b>, remis dès la première visite. Le site officiel le prépare gratuitement à partir de l'adresse ou de la parcelle ; il reste à le compléter (sinistres connus, etc.).</p>
+        <div class="actions" style="margin-top:0"><button class="btn sm" onclick="copyText(el('dAdr').value,'Adresse copiée : collez-la sur le site')">Copier l'adresse</button><a class="btn sm pri" href="https://errial.georisques.gouv.fr/#/" target="_blank" rel="noopener">Ouvrir le site de l'état des risques</a><a class="btn sm" href="https://www.georisques.gouv.fr/" target="_blank" rel="noopener">Géorisques</a></div>
+        <h3>Ce qui manque</h3><div id="dManque"></div>
+      </div>
+    </div>
+    <div class="card"><h2>Les diagnostics</h2><div style="overflow-x:auto"><table class="t" id="dDiag"></table></div><p class="small muted">Durées de validité générales : en cas de doute (travaux, cas particulier), le diagnostiqueur et le notaire tranchent.</p></div>
+    <div class="grid2">
+      <div class="card"><h2>Les autres documents</h2><div id="dDocs"></div></div>
+      <div class="card"><h2>Message au propriétaire</h2><textarea id="dMsg" style="min-height:220px"></textarea><div class="actions"><button class="btn pri" onclick="copyText(el('dMsg').value,'Message copié')">Copier</button><button class="btn" onclick="printDoss()">Imprimer la liste</button></div></div>
+    </div>
+  </section>
+  <section class="tab" id="tab-res">
+
+    <div class="kpis" id="kpiR"></div>
+    <div class="grid2">
+      <div class="card">
+        <h2>Campagnes et événements</h2>
+        <div style="overflow-x:auto"><table class="t" id="campTable"></table></div>
+        <details style="margin-top:8px"><summary style="cursor:pointer;font-weight:800">+ Ajouter une campagne</summary>
+          <div class="row3"><div><label class="f">Nom</label><input type="text" id="kNom"></div><div><label class="f">Type</label><select id="kType"><option>Boîtage observatoire</option><option>Courrier « Nous avons vendu »</option><option>Journée estimation</option><option>Atelier « Je vends seul »</option><option>Atelier bailleurs</option><option>Réseaux sociaux</option><option>Autre</option></select></div><div><label class="f">Date</label><input type="date" id="kDate"></div></div>
+          <div class="row4"><div><label class="f">Quantité (boîtes, invités…)</label><input type="number" id="kQ"></div><div><label class="f">Coût</label><input type="number" id="kCout"></div><div><label class="f">Contacts reçus</label><input type="number" id="kCont"></div><div><label class="f">Consentements</label><input type="number" id="kCons"></div></div>
+          <div class="row"><div><label class="f">Rendez-vous d'estimation</label><input type="number" id="kRdv"></div><div><label class="f">Mandats signés</label><input type="number" id="kMan"></div></div>
+          <div class="actions"><button class="btn pri sm" onclick="addCamp()">Ajouter</button></div>
+        </details>
+      </div>
+      <div class="card">
+        <h2>Ambassadeurs et prescripteurs</h2>
+        <div style="overflow-x:auto"><table class="t" id="ambTable"></table></div>
+        <details style="margin-top:8px"><summary style="cursor:pointer;font-weight:800">+ Ajouter un partenaire</summary>
+          <div class="row3"><div><label class="f">Nom</label><input type="text" id="aNom"></div><div><label class="f">Type</label><select id="aType"><option>Commerçant</option><option>Gardien d'immeuble</option><option>Notaire</option><option>Syndic</option><option>Courtier</option><option>Artisan</option><option>Employeur (service RH, CSE)</option><option>Autre</option></select></div><div><label class="f">Contact</label><input type="text" id="aCont"></div></div>
+          <div class="row3"><div><label class="f">Contacts apportés</label><input type="number" id="aApp"></div><div><label class="f">Mandats signés</label><input type="number" id="aMan"></div><div><label class="f">Dernier remerciement</label><input type="date" id="aMerci"></div></div>
+          <div class="actions"><button class="btn pri sm" onclick="addAmb()">Ajouter</button></div>
+        </details>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="card"><h2>Ce qui marche le mieux</h2><div id="resAl"></div></div>
+      <div class="card"><h2>Compte rendu au responsable</h2><textarea id="crTxt" style="min-height:220px"></textarea><div class="actions"><button class="btn pri" onclick="copyText(el('crTxt').value,'Compte rendu copié')">Copier</button></div></div>
+    </div>
+  </section>
+  <section class="tab news" id="tab-reperes">
+
+    <div class="card" style="background:#14532d;color:#fff;border:0">
+      <h2 style="color:#fff">📰 Veille : la fin de la pige téléphonique</h2>
+      <p style="margin:0 0 6px">Depuis le 11 août 2026, démarcher un particulier par téléphone sans son <b>consentement préalable</b> est interdit. Le décret n° 2026-662 du 23 juillet 2026 précise les règles : cinq mentions obligatoires (identité de l'agence et services, proposition d'accepter ou de refuser, durée de validité d'un an au maximum, droit de retrait, accès à la preuve), case non pré-cochée, accord distinct des autres canaux, preuve conservée trois ans. Une demande d'estimation permet de rappeler pour traiter cette demande, mais ne vaut pas accord au démarchage. Un mandat obtenu après un appel illégal peut être fragilisé.</p>
+      <p style="margin:0">Copier en masse les annonces des sites (Leboncoin, SeLoger…) est aussi sanctionné par les tribunaux, et les numéros des vendeurs sont des données personnelles.</p>
+      <p class="src" style="color:#bbf7d0">Sources : MySweetImmo (août 2026) ; Qoridor ; Selectra ; décisions de justice Leboncoin et SeLoger contre Jinka (2024-2025).</p>
+    </div>
+    <div class="grid2">
+      <div class="card"><h3>📊 Les données DVF</h3><ul>
+        <li>Prix de vente réels publiés par la DGFiP, mis à jour en avril et en octobre ; plusieurs mois de décalage avec les ventes signées.</li>
+        <li>Pas de données pour l'Alsace-Moselle et Mayotte.</li>
+        <li>Ne pas chercher à retrouver qui a vendu, ne pas publier la liste des ventes : statistiques seulement.</li>
+        <li>Prix au m² = prix ÷ surface réelle bâtie ; on garde les ventes d'un seul logement (appartement ou maison) pour éviter les ventes groupées.</li>
+        <li>La médiane (valeur du milieu) résiste mieux aux ventes exceptionnelles que la moyenne.</li></ul></div>
+      <div class="card"><h3>🧭 Les canaux qui restent ouverts</h3><ul>
+        <li>Faire venir le vendeur : estimation en ligne avec accord, journée estimation, observatoire avec QR code.</li>
+        <li>Le terrain : boîtage (en respectant « Stop pub »), courrier « Nous avons vendu au… », panneaux.</li>
+        <li>Les prescripteurs : notaires, syndics, courtiers, commerçants, employeurs ; chacun demande à son client s'il accepte d'être contacté.</li>
+        <li>Les anciens clients et les acheteurs qui doivent d'abord vendre.</li></ul></div>
+      <div class="card"><h3>🏠 Les bailleurs et le DPE</h3><ul>
+        <li>Loi Climat et Résilience : logements classés G interdits à la (re)location depuis le 1er janvier 2025, F au 1er janvier 2028, E au 1er janvier 2034 (calendrier décalé en outre-mer).</li>
+        <li>La réforme du DPE au 1er janvier 2026 a fait remonter de classe de nombreux logements chauffés à l'électricité.</li>
+        <li>Projet de loi « Relance logement » : adopté au Sénat le 8 juillet 2026, en examen à l'Assemblée nationale. Il permettrait de continuer à louer une passoire si le propriétaire s'engage à faire les travaux (sursis de 3 ans pour une maison, 5 ans en copropriété). Rien ne s'applique tant que la loi n'est pas votée et publiée.</li></ul>
+        <p class="src">Sources : Trackstone ; Selectra ; PAP ; Effy ; SeLoger (septembre 2026).</p></div>
+      <div class="card"><h3>🔥 La base des DPE (ADEME)</h3><ul>
+        <li>Tous les DPE réalisés depuis le 1er juillet 2021 sur des logements existants, mis à jour chaque semaine, en données ouvertes.</li>
+        <li>Ce n'est pas tout le parc : seulement les logements qui ont eu un DPE (souvent pour une vente ou une location). On dit « X % des DPE réalisés », pas « X % des logements ».</li>
+        <li>Chaque DPE porte une adresse : l'outil ne garde que des comptes par commune et par rue (au moins 10 DPE), jamais une liste de logements à démarcher.</li>
+        <li>Un DPE d'avant juillet 2021 n'est plus valable ; la réforme du calcul de 2026 a fait passer des logements chauffés à l'électricité de F à E : conseiller de vérifier ou de mettre à jour le DPE.</li></ul>
+        <p class="src">Sources : ADEME, data.gouv.fr ; Selectra.</p></div>
+      <div class="card"><h3>💶 La carte des loyers</h3><ul>
+        <li>Publiée par le ministère du Logement et l'ANIL : loyers d'annonce estimés, en € par m², <b>charges comprises</b>, pour un logement vide type mis en location au 3e trimestre 2025.</li>
+        <li>Quatre types : appartements (52 m² de référence), T1-T2 (37 m²), T3 et plus (72 m²), maisons (92 m²).</li>
+        <li>Ce sont des estimations, pas des loyers moyens. Prudence si moins de 30 annonces dans la commune, si le R² est inférieur à 0,5 ou si la fourchette est large. On ne compare pas deux éditions entre elles.</li>
+        <li>Rendement brut = loyer annuel ÷ prix d'achat. Avant charges, impôts, vacance et travaux : le rendement net est plus bas.</li></ul>
+        <p class="src">Sources : ministère de la Transition écologique, guide d'utilisation de la carte des loyers (décembre 2025) ; data.gouv.fr.</p></div>
+      <div class="card"><h3>📁 Le dossier de diagnostic technique</h3><ul>
+        <li>Vente : DPE 10 ans ; gaz et électricité (installation de plus de 15 ans) 3 ans ; termites et état des risques 6 mois ; plomb (avant 1949) 1 an si présence, illimité sinon ; amiante (permis avant juillet 1997) illimité si absence (diagnostic après avril 2013) ; assainissement non collectif 3 ans ; audit énergétique 5 ans pour une maison ou un immeuble à un seul propriétaire classé E, F ou G.</li>
+        <li>Location : gaz et électricité 6 ans ; plomb 6 ans si présence ; pas de termites, d'assainissement ni d'audit ; surface habitable dans le bail.</li>
+        <li>Il manque un document valable à la signature ? Le vendeur ne peut plus s'exonérer de la garantie des vices cachés sur ce point.</li></ul>
+        <p class="src">Sources : service-public.fr (via Empruntis) ; PAP ; notaires.fr ; CPIM (août 2026).</p></div>
+      <div class="card"><h3>📏 Les indicateurs</h3><ul>
+        <li>Taux de consentement = consentements ÷ contacts.</li>
+        <li>Taux de transformation = mandats ÷ rendez-vous d'estimation.</li>
+        <li>Coût par mandat = coût de la campagne ÷ mandats signés.</li>
+        <li>Comparer les canaux sur une même période.</li></ul></div>
+    </div>
+    <div class="card" style="background:var(--warn-bg);border-color:#f1d48f"><b>Vérifié le 13 novembre 2026.</b> L'estimation de l'outil est indicative : elle ne remplace ni la visite, ni l'avis de valeur du professionnel.</div>
+  </section>
+  <section class="tab" id="tab-pitch">
+    <div class="grid2">
+      <div class="card">
+        <h2>1. Configurer l'outil</h2>
+        <div class="row"><div><label class="f">Nom de l'entreprise</label><input type="text" id="cShop"></div><div><label class="f">Ville</label><input type="text" id="cVille"></div></div>
+        
+        <div class="row"><div><label class="f">Prénom de l'élève</label><input type="text" id="cEleve"></div><div><label class="f">Classe</label><input type="text" id="cClasse" placeholder="ex. 1re MCV B"></div></div>
+        <label class="f">Couleur</label><div class="pills" id="pColor"></div>
+        <div class="actions"><button class="btn pri" onclick="saveSettings()">Enregistrer</button><button class="btn amb" onclick="demo()">▶ Lancer la démo</button></div>
+      </div>
+      <div class="card">
+        <h2>2. Le pitch (45 secondes)</h2>
+        <div class="pitch" id="pitchTxt"></div>
+        <h3>Pendant la démo, montrer dans l'ordre</h3>
+        <ol class="small"><li>L'observatoire des prix réels du quartier, avec les DPE et les loyers de la commune, prêt à imprimer avec le QR code (onglet 1).</li><li>La liste des documents du mandat et l'état des risques (onglet 5).</li><li>« Puis-je appeler cette personne ? » : le registre répond avant chaque appel (onglet 3).</li><li>Le simulateur pour un bailleur dont le logement est classé F (onglet 4), puis le coût par mandat de chaque campagne (onglet 6).</li></ol>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h2>3. Les questions qu'on vous posera</h2>
+        <dl class="qa">
+          <dt>« C'est payant ? »</dt><dd>Non. Gratuit, sans abonnement, fonctionne sans internet.</dd>
+          <dt>« On a toujours fait de la pige, ça marche. »</dt><dd>Depuis le 11 août 2026, appeler un particulier sans son accord est interdit, et un mandat obtenu ainsi peut être contesté. L'outil propose d'autres canaux, mesurés.</dd><dt>« Les prix DVF ne sont pas à jour. »</dt><dd>C'est vrai, ils ont plusieurs mois de décalage : on les complète avec vos ventes récentes. Ce sont les seuls prix de vente réels publics.</dd><dt>« Vous récupérez les annonces de Leboncoin ? »</dt><dd>Non : c'est interdit et sanctionné. L'outil fait venir les vendeurs vers l'agence, avec leur accord.</dd>
+          <dt>« Et si je ne sais pas répondre ? »</dt><dd>Phrase de repli : <i>« Je ne veux pas vous donner une information inexacte. Je vérifie et je vous réponds par écrit avant [jour]. »</i></dd>
+        </dl>
+        <h3>Ce qu'on ne dit jamais</h3>
+        <ul class="never small"><li>« On peut appeler, son numéro est sur l'annonce. »</li><li>Publier une liste de ventes avec les adresses.</li><li>Présenter l'estimation de l'outil comme un avis de valeur définitif.</li><li>Pousser un propriétaire âgé ou fragile à vendre.</li></ul>
+      </div>
+      <div class="card">
+        <h2>4. Entraînement en classe</h2>
+        <p class="sub">Quatre cas fictifs. Le corrigé est calculé par l'outil.</p>
+        <div id="scenList"></div>
+        <div class="card classe-only" id="scenBox" style="margin-top:12px;border-color:#f0d27a;background:#fffdf5"></div>
+        <h3>Ajouter un cas (professeur)</h3>
+        <details>
+          <summary class="small" style="cursor:pointer;font-weight:700">Ouvrir le formulaire</summary>
+          <p class="small muted">En mode classe, préparez les données du cas dans les onglets, puis enregistrez-les comme cas.</p>
+          <label class="f">Titre du cas</label><input type="text" id="nTitre">
+          <label class="f">Contexte</label><textarea id="nCtx"></textarea>
+          <label class="f">Questions (une par ligne)</label><textarea id="nQ"></textarea>
+          <label class="f">Points attendus</label><textarea id="nCorr"></textarea>
+          <div class="actions"><button class="btn pri" onclick="addScen()">Enregistrer l'état actuel comme cas</button></div>
+        </details>
+        <div class="actions"><button class="btn" onclick="exportScen()">Exporter mes cas</button><label class="btn" style="display:inline-block">Importer des cas<input type="file" accept=".json" id="impScen" style="display:none"></label></div>
+      </div>
+    </div>
+    <div class="card no-print"><h2>Sauvegarde</h2><div class="actions" style="margin-top:0"><button class="btn" onclick="exportJSON()">Sauvegarder (fichier)</button><label class="btn" style="display:inline-block">Restaurer<input type="file" accept=".json" id="impJSON" style="display:none"></label><button class="btn red" onclick="clearAll()">Tout effacer</button></div></div>
+  </section>
+</main>
+<div class="bnav">
+  <button id="b-obs" onclick="go('obs')"><span>📊</span>Prix</button>
+  <button id="b-est" onclick="go('est')"><span>🔎</span>Estimer</button>
+  <button id="b-cons" onclick="go('cons')"><span>☎️</span>Accords</button>
+  <button id="b-bail" onclick="go('bail')"><span>🏚️</span>Bailleurs</button>
+  <button id="b-doss" onclick="go('doss')"><span>📁</span>Dossier</button>
+  <button id="b-res" onclick="go('res')"><span>🤝</span>Réseau</button>
+  <button id="b-reperes" onclick="go('reperes')"><span>📰</span>Repères</button>
+  <button id="b-pitch" onclick="go('pitch')"><span>🎓</span>Pitch</button>
+</div>
+<script>
+
+/* ============ utilitaires ============ */
+const el=id=>document.getElementById(id);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const iso=d=>{const z=new Date(d.getTime()-d.getTimezoneOffset()*60000);return z.toISOString().slice(0,10)};
+const realToday=()=>iso(new Date());
+const addDays=(s,n)=>{const d=new Date(s+"T12:00:00");d.setDate(d.getDate()+n);return iso(d)};
+const diffDays=(a,b)=>Math.round((new Date(b+"T12:00:00")-new Date(a+"T12:00:00"))/864e5);
+const fr=s=>{if(!s)return"—";const[y,m,d]=s.split("-");return d+"/"+m+"/"+y};
+const N=v=>{const x=parseFloat(String(v==null?'':v).replace(',','.'));return isFinite(x)?x:0};
+const r2=n=>Math.round(n*100)/100;
+const eur=n=>r2(n).toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+" €";
+const eur0=n=>Math.round(n).toLocaleString("fr-FR")+" €";
+const num=(n,d)=>(Math.round(n*Math.pow(10,d||0))/Math.pow(10,d||0)).toLocaleString("fr-FR");
+const pct=(x,d)=>x===null||x===undefined||!isFinite(x)?'—':(Math.round(x*Math.pow(10,(d==null?1:d)+2))/Math.pow(10,d==null?1:d)).toLocaleString("fr-FR")+" %";
+const uid=p=>(p||'x')+Date.now().toString(36)+Math.floor(Math.random()*1e5).toString(36);
+const MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+function toast(m){const t=el('toastMsg');t.textContent=m;t.classList.add('show');clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove('show'),2600)}
+function ask(text,fn){el('dlgText').textContent=text;el('dlg').classList.add('show');el('dlgYes').onclick=()=>{el('dlg').classList.remove('show');fn()};el('dlgNo').onclick=()=>el('dlg').classList.remove('show')}
+function copyText(t,msg){const done=()=>toast(msg||'Copié');if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,()=>fb(t,done))}else fb(t,done)}
+function fb(t,done){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){toast('Copie impossible : sélectionnez le texte')}a.remove()}
+function download(name,content,type){try{const b=new Blob([content],{type:type||'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);toast('Fichier enregistré : '+name)}catch(e){copyText(content,'Téléchargement impossible ici : contenu copié')}}
+function printHTML(html){const p=el('printZone');p.innerHTML=html;document.body.classList.add('print-zone');const off=()=>{document.body.classList.remove('print-zone');window.removeEventListener('afterprint',off)};window.addEventListener('afterprint',off);try{window.print()}catch(e){}setTimeout(off,1500)}
+const csvq=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';
+
+const APP="Qualif'Mandats";const PFX='qman';const PFX_NAME='qualif-mandats';const TABS=['obs', 'est', 'cons', 'bail', 'doss', 'res', 'reperes', 'pitch'];
+const COLORS={'Vert': '#15803d', 'Bleu': '#1d4ed8', 'Bordeaux': '#9f1239', 'Ardoise': '#334155', 'Noir': '#1f2937'};const DEFAULT_COLOR='Vert';const SETTINGS_DEF={};const EXTRA_SET=[];
+const SCEN_HINT='Les données du cas sont dans les onglets. Calcule toi-même avant de regarder le corrigé.';
+const PITCH_END="je peux construire l'observatoire de votre quartier et tenir votre registre pendant mon stage";const DEMO_TAB='obs';
+
+
+const blank=()=>({fcom:'',dvf:[],dvfMeta:{},regs:[],camps:[],ambs:[],obs:{titre:'',cta:'Recevez l\'estimation gratuite de votre logement',contact:'',qr:'',logo:'',rues:'1',dpe:'0',loy:'0'},dpe:{},loy:{},dossiers:[],dcur:'',bail:{typ:'A',pc:'',prov:'',dpe:'F',surf:'',loyer:'',val:'',ch:'',h:5,trav:'',aides:'',dur:3,pv:8,dec:10,hon:5,date:''},est:null,ref:''});
+function migrate(){S.obs=Object.assign(blank().obs,S.obs||{});S.bail=Object.assign(blank().bail,S.bail||{});S.dpe=S.dpe||{};S.loy=S.loy||{};S.dossiers=S.dossiers||[]}
+const TL={A:'Appartement',M:'Maison'};
+const med=a=>{if(!a.length)return null;const s=a.slice().sort((x,y)=>x-y),m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2};
+const qt=(a,q)=>{if(!a.length)return null;const s=a.slice().sort((x,y)=>x-y),p=(s.length-1)*q,b=Math.floor(p);return s[b]+(s[Math.min(b+1,s.length-1)]-s[b])*(p-b)};
+const pm2=r=>r[2]/r[3];
+const LS_DVF=()=>PFX+'_dvf_'+mode;
+
+/* ---------- DVF : chargement ---------- */
+function parseLine(l){const o=[];let c='',q=false;for(let i=0;i<l.length;i++){const ch=l[i];if(q){if(ch==='"'){if(l[i+1]==='"'){c+='"';i++}else q=false}else c+=ch}else if(ch==='"')q=true;else if(ch===','){o.push(c);c=''}else c+=ch}o.push(c);return o}
+let DVF_CODES={};
+function parseDVF(text){const lines=text.replace(/^﻿/,'').split(/\r?\n/).filter(x=>x.trim());if(lines.length<2)return [];const h=parseLine(lines[0]).map(x=>x.trim().toLowerCase());const ix=k=>h.indexOf(k);
+  const I={id:ix('id_mutation'),d:ix('date_mutation'),n:ix('nature_mutation'),v:ix('valeur_fonciere'),voie:ix('adresse_nom_voie'),t:ix('type_local'),s:ix('surface_reelle_bati'),p:ix('nombre_pieces_principales'),lat:ix('latitude'),lon:ix('longitude'),com:ix('nom_commune'),cc:ix('code_commune')};
+  if(I.id<0||I.v<0||I.t<0)throw new Error('format');const G={};
+  lines.slice(1).forEach(l=>{const c=parseLine(l);if(c[I.n]&&c[I.n]!=='Vente')return;const id=c[I.id];G[id]=G[id]||{d:c[I.d],v:N(c[I.v]),log:[],com:c[I.com]||''};if(I.cc>=0&&c[I.com]&&c[I.cc])DVF_CODES[c[I.com]]=c[I.cc];const t=c[I.t];if(t==='Appartement'||t==='Maison')G[id].log.push({t:t==='Maison'?'M':'A',s:N(c[I.s]),p:N(c[I.p]),lat:N(c[I.lat]),lon:N(c[I.lon]),voie:(c[I.voie]||'').trim()})});
+  const out=[];Object.values(G).forEach(g=>{if(g.log.length!==1)return;const L=g.log[0];if(!g.v||L.s<9)return;const m=g.v/L.s;if(m<300||m>25000)return;out.push([g.d,L.t,Math.round(g.v),L.s,L.p,r2(L.lat*1e5)/1e5,r2(L.lon*1e5)/1e5,L.voie,g.com])});return out}
+function setDVF(rows,meta){const seen=new Set(S.dvf.map(r=>r.join('|')));rows.forEach(r=>{const k=r.join('|');if(!seen.has(k)){S.dvf.push(r);seen.add(k)}});S.dvfMeta=Object.assign(S.dvfMeta||{},meta||{});S.dvfMeta.coms=S.dvfMeta.coms||{};[...new Set(rows.map(r=>r[8]))].forEach(c=>{S.dvfMeta.coms[c]=Object.assign(S.dvfMeta.coms[c]||{},{maj:realToday()},DVF_CODES[c]?{code:DVF_CODES[c]}:meta&&meta.code?{code:meta.code}:{})});if(rows.length)S.fcom=rows[0][8];save();renderApp()}
+function coms(){const G={};S.dvf.forEach(r=>{const c=r[8]||'(sans nom)';G[c]=(G[c]||0)+1});return Object.keys(G).sort((a,b)=>a.localeCompare(b,'fr')).map(c=>({c,n:G[c],m:(S.dvfMeta.coms||{})[c]||{}}))}
+function DV(){const C=coms();if(S.fcom&&!C.some(x=>x.c===S.fcom))S.fcom='';return S.fcom?S.dvf.filter(r=>(r[8]||'(sans nom)')===S.fcom):S.dvf}
+function comName(){const C=coms();return S.fcom||(C.length===1?C[0].c:C.map(x=>x.c).join(', '))}
+function pickI(i){pickCom(i<0?'':coms()[i].c)}
+function delI(i){delCom(coms()[i].c)}
+function pickCom(c){S.fcom=c;save();renderApp();toast(c?'Observatoire : '+c:'Observatoire : toutes les communes')}
+function delCom(c){ask('Effacer les ventes de '+c+' ?',()=>{S.dvf=S.dvf.filter(r=>(r[8]||'(sans nom)')!==c);if(S.dvfMeta.coms)delete S.dvfMeta.coms[c];if(S.fcom===c)S.fcom='';save();renderApp()})}
+function renderComs(){const C=coms();if(!C.length){el('comBox').innerHTML='';el('cmpBox').style.display='none';return}DV();
+  el('comBox').innerHTML='<label class="f">Communes enregistrées : choisissez celle à analyser</label><div class="pills">'+(C.length>1?'<button class="'+(!S.fcom?'on':'')+'" onclick="pickI(-1)">Toutes ('+S.dvf.length+')</button>':'')+C.map((x,i)=>'<button class="'+(S.fcom===x.c||(C.length===1)?'on':'')+'" onclick="pickI('+i+')">'+esc(x.c)+' ('+x.n+')</button>').join('')+'</div><div class="small muted" style="margin-top:4px">'+C.map((x,i)=>esc(x.c)+(x.m.maj?' : chargée le '+fr(x.m.maj):'')+' <a href="#" style="color:var(--bad)" onclick="delI('+i+');return false">effacer</a>').join(' · ')+'</div>';
+  el('cmpBox').style.display=C.length>1?'':'none';if(C.length>1){el('tCmp').innerHTML='<table class="t"><thead><tr><th>Commune</th><th class="num">Ventes</th><th class="num">Appart. €/m²</th><th class="num">Maisons €/m²</th><th class="num">Prix médian maison</th><th class="num">DPE F-G</th><th class="num">Rendement brut appart.</th><th></th></tr></thead><tbody>'+C.map((x,i)=>{const R=S.dvf.filter(r=>(r[8]||'(sans nom)')===x.c),A=R.filter(r=>r[1]==='A'),M=R.filter(r=>r[1]==='M');return '<tr'+(S.fcom===x.c?' style="background:#f0fdf4"':'')+'><td><b>'+esc(x.c)+'</b></td><td class="num">'+R.length+'</td><td class="num">'+(A.length>=5?eur0(med(A.map(pm2))):'—')+'</td><td class="num">'+(M.length>=5?eur0(med(M.map(pm2))):'—')+'</td><td class="num">'+(M.length>=5?eur0(med(M.map(r=>r[2]))):'—')+'</td><td class="num">'+(function(){const d=S.dpe[x.m.code];return d&&d.n?pct(((d.lab.F||0)+(d.lab.G||0))/d.n,0):'—'})()+'</td><td class="num">'+(function(){const L=S.loy[x.m.code],rb=L&&L.app&&A.length>=5?L.app.m*12/med(A.map(pm2)):null;return rb?pct(rb):'—'})()+'</td><td><button class="btn xs" onclick="pickI('+i+')">Analyser</button></td></tr>'}).join('')+'</tbody></table><p class="small muted">« — » : moins de 5 ventes.</p>'}}
+async function findCommune(){const q=el('cQ').value.trim();if(!q){toast('Tapez un code postal ou un nom');return}const url=/^\d{5}$/.test(q)?'https://geo.api.gouv.fr/communes?codePostal='+q+'&fields=nom,code,codeDepartement':'https://geo.api.gouv.fr/communes?nom='+encodeURIComponent(q)+'&fields=nom,code,codeDepartement&boost=population&limit=8';
+  try{const r=await fetch(url);const j=await r.json();if(!j.length){toast('Aucune commune trouvée');return}el('cSel').innerHTML=j.map(c=>'<option value="'+c.code+'">'+esc(c.nom)+' ('+c.code+')</option>').join('');el('cCode').value=j[0].code;toast(j.length+' commune(s) trouvée(s)')}catch(e){el('loadMsg').innerHTML='<div class="rule warn"><b>Recherche impossible depuis ce navigateur</b>Saisissez directement le code commune INSEE (ex. 93078 pour Villepinte).</div>'}}
+el('cSel').addEventListener('change',()=>{el('cCode').value=el('cSel').value});
+function depOf(code){return /^97/.test(code)?code.slice(0,3):code.slice(0,2)}
+function dvfUrl(code,y){return 'https://files.data.gouv.fr/geo-dvf/latest/csv/'+y+'/communes/'+depOf(code)+'/'+code+'.csv'}
+async function loadDVF(){const code=el('cCode').value.trim().toUpperCase();if(!/^[0-9AB]{5}$/.test(code)){toast('Code commune à 5 caractères ?');return}const n=N(el('cYears').value)||5;const y0=new Date().getFullYear()-1;const Y=[];for(let y=y0;y>y0-n-1&&Y.length<n+1;y--)Y.push(y);
+  el('loadMsg').innerHTML='Chargement…';let tot=0,ok=[],ko=[];
+  for(const y of Y){try{const r=await fetch(dvfUrl(code,y));if(!r.ok)throw 0;const rows=parseDVF(await r.text());tot+=rows.length;ok.push(y);setDVF(rows,{code,maj:realToday()})}catch(e){ko.push(y)}}
+  el('loadMsg').innerHTML=(ok.length?'<div class="rule ok"><b>'+tot+' ventes chargées</b>Années : '+ok.sort().join(', ')+'.</div>':'')+(ko.length?'<div class="rule '+(ok.length?'info':'warn')+'"><b>'+(ok.length?'Années non disponibles : '+ko.sort().join(', '):'Téléchargement direct impossible depuis ce navigateur')+'</b>'+(ok.length?'Normal pour l\'année en cours ou si la publication n\'a pas encore eu lieu.':'Téléchargez les fichiers en cliquant sur les liens ci-dessous, puis importez-les avec « Importer des fichiers CSV » :')+'<br>'+ko.sort().map(y=>'<a href="'+dvfUrl(code,y)+'" target="_blank" rel="noopener">'+y+'</a>').join(' · ')+'</div>':'')}
+el('impDVF').addEventListener('change',e=>{const F=[...e.target.files];let k=0,n=0;F.forEach(f=>{const rd=new FileReader();rd.onload=()=>{try{const rows=parseDVF(rd.result);n+=rows.length;setDVF(rows,{maj:realToday()})}catch(err){toast('Fichier non reconnu : '+f.name)}if(++k===F.length){el('loadMsg').innerHTML='<div class="rule ok"><b>'+n+' ventes importées</b>'+F.length+' fichier(s).</div>'}};rd.readAsText(f)});e.target.value=''});
+function clearDVF(){ask('Effacer les ventes de toutes les communes ?',()=>{S.dvf=[];S.dvfMeta={};S.fcom='';save();renderApp()})}
+
+/* ---------- DVF : statistiques ---------- */
+function years(){return [...new Set(DV().map(r=>r[0].slice(0,4)))].sort()}
+function statsOf(rows){return {n:rows.length,pm:med(rows.map(pm2)),prix:med(rows.map(r=>r[2])),surf:med(rows.map(r=>r[3]))}}
+function renderObs(){renderComs();renderEnergy();const D=DV();const Y=years();const com=comName();
+  if(!D.length){el('kpiO').innerHTML='';['chYear','map','tPieces','tRues'].forEach(i=>el(i).innerHTML='<p class="muted small">Aucune vente chargée.</p>');renderObsPrev();return}
+  const A=D.filter(r=>r[1]==='A'),M=D.filter(r=>r[1]==='M'),sa=statsOf(A),sm=statsOf(M);const yl=Y[Y.length-1],yf=Y[0];
+  const evo=t=>{const a=med(D.filter(r=>r[1]===t&&r[0].startsWith(yf)).map(pm2)),b=med(D.filter(r=>r[1]===t&&r[0].startsWith(yl)).map(pm2));return a&&b?(b-a)/a:null};
+  el('kpiO').innerHTML=[[D.length,"Ventes analysées",(com?com+' · ':'')+yf+' à '+yl],[sa.pm?eur0(sa.pm):'—',"Appartements : prix médian au m²",sa.n+" ventes · évolution "+(evo('A')===null?'—':(evo('A')>0?'+':'')+pct(evo('A')))],[sm.pm?eur0(sm.pm):'—',"Maisons : prix médian au m²",sm.n+" ventes · évolution "+(evo('M')===null?'—':(evo('M')>0?'+':'')+pct(evo('M')))],[S.dvfMeta.maj?fr(S.dvfMeta.maj):'—',"Données chargées le","mise à jour DVF : avril et octobre"]].map(k=>'<div class="kpi"><div class="v">'+k[0]+'</div><div class="l">'+k[1]+'</div><div class="o muted">'+k[2]+'</div></div>').join('');
+  const W=520,H=190;const vals=[];Y.forEach(y=>['A','M'].forEach(t=>{const m=med(D.filter(r=>r[1]===t&&r[0].startsWith(y)).map(pm2));if(m)vals.push(m)}));const mx=Math.max(1,...vals)*1.1;const bw=(W-40)/Y.length;let s='<svg viewBox="0 0 '+W+' '+(H+30)+'" style="width:100%">';
+  Y.forEach((y,i)=>{['A','M'].forEach((t,j)=>{const R=D.filter(r=>r[1]===t&&r[0].startsWith(y));const m=med(R.map(pm2));if(!m)return;const h=m/mx*H,x=30+i*bw+j*(bw/2-4)+4;s+='<rect x="'+x+'" y="'+(H-h)+'" width="'+(bw/2-8)+'" height="'+h+'" rx="3" fill="'+(t==='A'?'#15803d':'#a16207')+'"><title>'+TL[t]+' '+y+' : '+eur0(m)+' le m² ('+R.length+' ventes)</title></rect><text x="'+(x+(bw/2-8)/2)+'" y="'+(H-h-4)+'" font-size="9.5" text-anchor="middle" fill="#334155">'+Math.round(m)+'</text>'});s+='<text x="'+(30+i*bw+bw/2)+'" y="'+(H+16)+'" font-size="11" text-anchor="middle" fill="#334155">'+y+'</text>'});
+  el('chYear').innerHTML=s+'</svg><div class="small"><span style="color:#15803d">■</span> Appartements · <span style="color:#a16207">■</span> Maisons (€ le m², médiane)</div>';
+  const P=D.filter(r=>r[5]&&r[6]);if(P.length){const la=P.map(r=>r[5]),lo=P.map(r=>r[6]);const a0=Math.min(...la),a1=Math.max(...la),o0=Math.min(...lo),o1=Math.max(...lo);const q1=qt(P.map(pm2),.2),q2=qt(P.map(pm2),.4),q3=qt(P.map(pm2),.6),q4=qt(P.map(pm2),.8);const col=v=>v<q1?'#2563eb':v<q2?'#60a5fa':v<q3?'#a3a3a3':v<q4?'#f97316':'#dc2626';
+    const kx=Math.cos(((a0+a1)/2)*Math.PI/180),w=(o1-o0)*kx||1e-4,h=(a1-a0)||1e-4,sc=Math.min(500/w,300/h);const ox=(500-w*sc)/2,oy=(300-h*sc)/2;let m='<svg viewBox="0 0 520 320" style="width:100%;background:#f8fafc;border-radius:10px">';P.forEach(r=>{m+='<circle cx="'+(10+ox+(r[6]-o0)*kx*sc)+'" cy="'+(310-oy-(r[5]-a0)*sc)+'" r="3.2" fill="'+col(pm2(r))+'" fill-opacity=".8"><title>'+TL[r[1]]+' · '+r[0].slice(0,4)+' · '+eur0(pm2(r))+' le m²</title></circle>'});el('map').innerHTML=m+'</svg>'}else el('map').innerHTML='<p class="muted small">Pas de coordonnées dans les fichiers.</p>';
+  const pc=[1,2,3,4,5];el('tPieces').innerHTML='<table class="t"><thead><tr><th>Pièces</th><th class="num">Appart. : ventes</th><th class="num">Prix médian</th><th class="num">€/m²</th><th class="num">Maisons : ventes</th><th class="num">Prix médian</th><th class="num">€/m²</th></tr></thead><tbody>'+pc.map(p=>{const f=t=>D.filter(r=>r[1]===t&&(p<5?r[4]===p:r[4]>=5));const a=statsOf(f('A')),m=statsOf(f('M'));return '<tr><td><b>'+(p<5?p:'5 et +')+'</b></td><td class="num">'+a.n+'</td><td class="num">'+(a.n>=3?eur0(a.prix):'—')+'</td><td class="num">'+(a.n>=3?eur0(a.pm):'—')+'</td><td class="num">'+m.n+'</td><td class="num">'+(m.n>=3?eur0(m.prix):'—')+'</td><td class="num">'+(m.n>=3?eur0(m.pm):'—')+'</td></tr>'}).join('')+'</tbody></table><p class="small muted">« — » : moins de 3 ventes, pas de statistique.</p>';
+  el('tRues').innerHTML='<table class="t"><thead><tr><th>Rue</th><th class="num">Ventes</th><th class="num">€/m² médian</th><th class="num">Écart à la commune</th></tr></thead><tbody>'+rues().slice(0,15).map(x=>'<tr><td>'+esc(x.v)+'</td><td class="num">'+x.n+'</td><td class="num">'+eur0(x.pm)+'</td><td class="num" style="color:'+(x.e>=0?'var(--ok)':'var(--bad)')+'">'+(x.e>0?'+':'')+pct(x.e)+'</td></tr>').join('')+'</tbody></table>';
+  renderObsPrev()}
+function rues(){const D=DV(),all=med(D.map(pm2)),G={};D.forEach(r=>{if(!r[7])return;(G[r[7]]=G[r[7]]||[]).push(r)});return Object.entries(G).filter(([v,R])=>R.length>=5).map(([v,R])=>{const pm=med(R.map(pm2));return {v,n:R.length,pm,e:(pm-all)/all}}).sort((a,b)=>b.n-a.n)}
+['oTitre','oCta','oContact','oRues','oDpe','oLoy'].forEach(i=>el(i).addEventListener('input',()=>{S.obs[{oTitre:'titre',oCta:'cta',oContact:'contact',oRues:'rues',oDpe:'dpe',oLoy:'loy'}[i]]=el(i).value;save();renderObsPrev()}));
+['oQr','oLogo'].forEach(i=>el(i).addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;if(f.size>400000){toast('Image trop lourde (400 Ko maximum)');return}const rd=new FileReader();rd.onload=()=>{S.obs[i==='oQr'?'qr':'logo']=rd.result;save();renderObsPrev()};rd.readAsDataURL(f)}));
+function obsHTML(big){const D=DV(),Y=years();if(!D.length)return '<p class="muted">Chargez d\'abord les ventes.</p>';const com=comName()||'votre commune',o=S.obs;const A=D.filter(r=>r[1]==='A'),M=D.filter(r=>r[1]==='M'),f=big?1.1:1;
+  const ylast=Y[Y.length-1];const row=(t)=>{const R=D.filter(r=>r[1]===t);const L=R.filter(r=>r[0].startsWith(ylast));return R.length>=5?'<td style="padding:8px;border:1px solid #ddd"><b>'+TL[t]+'s</b></td><td style="padding:8px;border:1px solid #ddd;text-align:right"><b>'+eur0(med(R.map(pm2)))+'</b> le m²</td><td style="padding:8px;border:1px solid #ddd;text-align:right">'+(L.length>=5?eur0(med(L.map(pm2)))+' en '+ylast:'—')+'</td><td style="padding:8px;border:1px solid #ddd;text-align:right">'+R.length+' ventes</td>':''};
+  return '<div style="font-size:'+(13*f)+'px;color:#111"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:4px solid '+(COLORS[settings.color]||'#15803d')+';padding-bottom:8px"><div><div style="font-size:'+(11*f)+'px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#555">'+esc(settings.shop||'[Agence]')+'</div><div style="font-size:'+(24*f)+'px;font-weight:900;line-height:1.1">'+esc(o.titre||('Combien valent les logements à '+com+' ?'))+'</div><div>Les prix de vente réels de '+Y[0]+' à '+ylast+'</div></div>'+(o.logo?'<img src="'+o.logo+'" style="max-height:60px">':'')+'</div>'+
+   '<table style="width:100%;border-collapse:collapse;margin:12px 0"><tr>'+row('A')+'</tr><tr>'+row('M')+'</tr></table>'+
+   '<div style="margin:6px 0"><b>Prix médian selon la taille (appartements)</b><br>'+[1,2,3,4].map(p=>{const R=A.filter(r=>r[4]===p);return R.length>=3?p+' pièce'+(p>1?'s':'')+' : '+eur0(med(R.map(r=>r[2]))):''}).filter(Boolean).join(' · ')+'</div>'+
+   (o.rues==='1'&&rues().length?'<div style="margin:8px 0"><b>Quelques rues</b> (au moins 5 ventes) : '+rues().slice(0,6).map(x=>esc(x.v.toLowerCase().replace(/(^|\s)\S/g,c=>c.toUpperCase()).replace(/ (De|Du|Des|La|Le|Les|D') /g,m=>m.toLowerCase()))+' '+eur0(x.pm)+'/m²').join(' · ')+'</div>':'')+
+   obsExtra(f)+'<div style="display:flex;gap:14px;align-items:center;background:#f3f4f6;border-radius:10px;padding:12px;margin-top:10px">'+(o.qr?'<img src="'+o.qr+'" style="width:'+(110*f)+'px;height:'+(110*f)+'px">':'<div style="width:'+(100*f)+'px;height:'+(100*f)+'px;border:2px dashed #999;display:flex;align-items:center;justify-content:center;font-size:11px;text-align:center">QR code<br>à ajouter</div>')+'<div><div style="font-size:'+(17*f)+'px;font-weight:800">'+esc(o.cta)+'</div><div>Chaque logement est unique : rue, étage, état, extérieur… Nous venons l\'estimer gratuitement, sans engagement.</div><div style="margin-top:6px;font-weight:700">'+esc(o.contact||'')+'</div></div></div>'+
+   '<div style="font-size:'+(10*f)+'px;color:#666;margin-top:8px">Source : Demandes de valeurs foncières (DVF), DGFiP, ventes de '+Y[0]+' à '+ylast+' ; prix médians calculés par '+esc(settings.shop||'l\'agence')+' sur les ventes d\'un seul logement. Données publiées avec plusieurs mois de décalage ; statistiques indicatives.</div></div>'}
+function renderObsPrev(){el('oDpe').value=S.obs.dpe||'0';el('oLoy').value=S.obs.loy||'0';el('oTitre').value=S.obs.titre;el('oCta').value=S.obs.cta;el('oContact').value=S.obs.contact;el('oRues').value=S.obs.rues;el('obsPrev').innerHTML=obsHTML(false)}
+function printObs(){if(!DV().length){toast('Chargez d\'abord les ventes');return}printHTML(obsHTML(true))}
+
+/* ---------- estimation ---------- */
+function hav(a,b,c,d){const R=6371000,t=x=>x*Math.PI/180;const dl=t(c-a),dn=t(d-b);const h=Math.sin(dl/2)**2+Math.cos(t(a))*Math.cos(t(c))*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(h))}
+async function geocode(q){const urls=['https://data.geopf.fr/geocodage/search?q='+encodeURIComponent(q)+'&limit=1','https://api-adresse.data.gouv.fr/search/?q='+encodeURIComponent(q)+'&limit=1'];for(const u of urls){try{const r=await fetch(u);const j=await r.json();const f=j.features&&j.features[0];if(f)return {lon:f.geometry.coordinates[0],lat:f.geometry.coordinates[1],label:f.properties.label}}catch(e){}}return null}
+async function estimate(){const t=el('eType').value,s=N(el('eSurf').value),p=N(el('ePieces').value);if(!s){toast('Surface ?');return}if(!S.dvf.length){toast('Chargez d\'abord les ventes (onglet 1)');return}
+  let g=null;const adr=el('eAdr').value.trim();if(adr&&N(el('eRay').value)<99999){el('geoMsg').textContent='Recherche de l\'adresse…';g=await geocode(adr);el('geoMsg').textContent=g?'Adresse trouvée : '+g.label:'Adresse introuvable depuis ce navigateur : comparaison sur toute la commune.'}
+  S.est={t,s,p,adr,g,ray:N(el('eRay').value),per:N(el('ePer').value),tol:N(el('eTol').value),adj:N(el('eEtat').value)+N(el('eDpe').value)+N(el('eAtout').value)};save();renderEst()}
+function comps(e){if(!e)return [];const lim=addDays(today(),-365*e.per);return (e.g&&e.ray<99999?S.dvf:DV()).filter(r=>r[1]===e.t&&r[0]>=lim&&Math.abs(r[3]-e.s)/e.s<=e.tol&&(!e.p||!r[4]||Math.abs(r[4]-e.p)<=1)).map(r=>({r,d:e.g&&r[5]?hav(e.g.lat,e.g.lon,r[5],r[6]):null})).filter(x=>e.g&&e.ray<99999?x.d!==null&&x.d<=e.ray:true).sort((a,b)=>(a.d==null?0:a.d)-(b.d==null?0:b.d)||b.r[0].localeCompare(a.r[0]))}
+function estCalc(){const e=S.est;const C=comps(e);if(!e||C.length<3)return {e,C,ok:false};const v=C.map(x=>pm2(x.r));const q1=qt(v,.25),m=med(v),q3=qt(v,.75),k=1+e.adj;return {e,C,ok:true,q1,m,q3,k,lo:q1*e.s*k,mid:m*e.s*k,hi:q3*e.s*k}}
+function renderEst(){const E=estCalc();const e=S.est;if(e){el('eType').value=e.t;el('eSurf').value=e.s;el('ePieces').value=e.p||'';el('eAdr').value=e.adr||''}
+  if(!e){el('estBox').innerHTML='<p class="muted small">Chargez les ventes (onglet 1), puis décrivez le bien.</p>';el('compList').innerHTML='';return}
+  el('estBox').innerHTML=E.ok?'<div style="font-size:26px;font-weight:900;color:var(--brand)">'+eur0(Math.round(E.lo/1000)*1000)+' à '+eur0(Math.round(E.hi/1000)*1000)+'</div><div class="small">Valeur centrale : <b>'+eur0(Math.round(E.mid/1000)*1000)+'</b> · '+E.C.length+' ventes comparables ('+(e.g&&e.ray<99999?'toutes les communes enregistrées':esc(comName()))+') · '+eur0(E.m)+' le m² (médiane) · ajustements '+(e.adj>0?'+':'')+pct(e.adj,0)+'</div><table class="t" style="margin-top:8px"><tr><td>Fourchette basse (1er quart des ventes)</td><td class="num">'+eur0(E.q1)+' × '+e.s+' m² × '+num(E.k,2)+'</td></tr><tr><td>Médiane</td><td class="num">'+eur0(E.m)+' × '+e.s+' m² × '+num(E.k,2)+'</td></tr><tr><td>Fourchette haute (3e quart)</td><td class="num">'+eur0(E.q3)+' × '+e.s+' m² × '+num(E.k,2)+'</td></tr></table><p class="small muted">Indicatif : à confirmer par la visite et l\'avis de valeur du professionnel. Les ventes les plus récentes ne sont pas encore dans DVF.</p>':'<div class="rule warn"><b>Seulement '+E.C.length+' vente(s) comparable(s)</b>Élargissez le rayon, la période ou l\'écart de surface.</div>';
+  el('compList').innerHTML='<table class="t"><thead><tr><th>Date</th><th>Rue</th><th class="num">Surface</th><th class="num">Pièces</th><th class="num">Prix</th><th class="num">€/m²</th><th class="num">Distance</th></tr></thead><tbody>'+E.C.slice(0,25).map(x=>'<tr><td>'+fr(x.r[0])+'</td><td class="small">'+esc(x.r[7])+'</td><td class="num">'+x.r[3]+' m²</td><td class="num">'+(x.r[4]||'—')+'</td><td class="num">'+eur0(x.r[2])+'</td><td class="num">'+eur0(pm2(x.r))+'</td><td class="num">'+(x.d==null?'—':Math.round(x.d)+' m')+'</td></tr>').join('')+'</tbody></table>'}
+
+/* ---------- consentements ---------- */
+const ORIG={web:"Formulaire sur le site",papier:"Formulaire papier",qr:"QR code de l'observatoire",atelier:"Atelier ou journée estimation",ambassadeur:"Ambassadeur ou prescripteur",oral:"Accord oral"};
+function addMonths(dt,m){const d=new Date(dt);d.setMonth(d.getMonth()+m);return d}
+function fmtDT(s){if(!s)return '—';const d=new Date(s);return d.toLocaleDateString('fr-FR')+' '+d.toTimeString().slice(0,5)}
+function nowRef(){return S.ref?new Date(S.ref+'T12:00:00'):new Date()}
+function canCall(c){const val=Math.min(12,N(c.val)||12),exp=addMonths(c.date,val),now=nowRef();
+  if(c.retrait)return {ok:false,t:"Non : accord retiré le "+fr(c.retrait),exp};
+  if(!c.coche)return {ok:false,t:"Non : pas d'acte positif (une case non cochée ou pré-cochée ne vaut pas accord)",exp};
+  if(!c.ment)return {ok:false,t:"Non : les cinq mentions obligatoires n'ont pas été présentées",exp};
+  if(c.orig==='oral'&&!String(c.preuve||'').trim())return {ok:false,t:"Non : accord oral sans preuve (enregistrement ou compte rendu horodaté)",exp};
+  if(now>exp)return {ok:false,t:"Non : accord expiré le "+exp.toLocaleDateString('fr-FR'),exp};
+  if(c.obj==='estim')return {ok:'part',t:"Oui, mais seulement pour traiter sa demande d'estimation, pas pour proposer d'autres services",exp};
+  return {ok:true,t:"Oui, jusqu'au "+exp.toLocaleDateString('fr-FR'),exp}}
+const FF=[['fServ','serv'],['fVal','val'],['fTel','tel'],['fMail','mail'],['fPresta','presta']];
+function formCfg(){S.form=Object.assign({serv:"estimation, vente et recherche de biens immobiliers",val:12,tel:'',mail:'',presta:''},S.form||{});return S.form}
+function formText(){const f=formCfg(),ag=settings.shop||'[Agence]',v=Math.min(12,N(f.val)||12);return [ag+(settings.ville?' ('+settings.ville+')':'')+" vous propose ses services : "+f.serv+"."+(f.presta?" Les appels peuvent être passés pour son compte par "+f.presta+".":""),"","Acceptez-vous que "+ag+" vous appelle pour vous proposer ces services ?","☐ Oui, j'accepte      ☐ Non, je refuse","","Votre accord est valable "+v+" mois à compter d'aujourd'hui. Il ne sera pas renouvelé automatiquement.","Vous pouvez le retirer à tout moment, gratuitement et aussi simplement que vous l'avez donné : par téléphone"+(f.tel?" au "+f.tel:"")+(f.mail?", par e-mail à "+f.mail:"")+", ou oralement lors d'un appel.","Sur simple demande, nous vous remettons gratuitement la preuve de votre accord, sur un support durable. Nous la conservons trois ans.","","Nom : ………………………  Téléphone : ………………………  Date et heure : ………………  Signature : ……………","","Ce choix est distinct de toute demande d'estimation : vous pouvez demander une estimation sans accepter d'être appelé pour d'autres offres."].join("\n")}
+FF.forEach(([i,k])=>el(i).addEventListener('input',()=>{formCfg()[k]=el(i).value;save();el('formTxt').textContent=formText()}));
+function printForm(){printHTML('<div style="white-space:pre-wrap;font-size:15px;line-height:1.6;border:2px solid #111;border-radius:10px;padding:20px"><h2 style="margin-top:0">'+esc(settings.shop||'[Agence]')+' · Votre accord pour être appelé</h2>'+esc(formText())+'</div>')}
+function addCons(){const n=el('rNom').value.trim();if(!n){toast('Nom ?');return}S.regs.push({id:uid('c'),nom:n,tel:el('rTel').value.trim(),date:el('rDate').value||new Date().toISOString().slice(0,16),orig:el('rOrig').value,obj:el('rObj').value,cons:el('rCons').value.trim(),coche:el('rCoche').checked,ment:el('rMent').checked,preuve:el('rPreuve').value.trim(),val:N(formCfg().val)||12,retrait:''});['rNom','rTel','rPreuve'].forEach(i=>el(i).value='');save();renderCons();toast('Consentement enregistré')}
+function retire(id){const c=S.regs.find(x=>x.id===id);ask('Enregistrer le retrait de l\'accord de '+c.nom+' aujourd\'hui ?',()=>{c.retrait=today();save();renderCons()})}
+function delCons(id){ask('Supprimer cette ligne du registre ? (À faire seulement après la durée de conservation de la preuve.)',()=>{S.regs=S.regs.filter(x=>x.id!==id);save();renderCons()})}
+function renderCons(){const f=formCfg();FF.forEach(([i,k])=>el(i).value=f[k]==null?'':f[k]);el('formTxt').textContent=formText();
+  el('regTable').innerHTML='<thead><tr><th>Nom</th><th>Téléphone</th><th>Accord donné le</th><th>Origine</th><th>Objet</th><th>Preuve</th><th>Puis-je appeler ?</th><th></th></tr></thead><tbody>'+(S.regs.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(c=>{const r=canCall(c);return '<tr><td><b>'+esc(c.nom)+'</b></td><td class="small">'+esc(c.tel)+'</td><td class="small">'+fmtDT(c.date)+'</td><td class="small">'+ORIG[c.orig]+'</td><td class="small">'+(c.obj==='estim'?'Sa demande d\'estimation':'Services de l\'agence')+'</td><td class="small">'+esc(c.preuve||'—')+'</td><td class="small" style="font-weight:700;color:'+(r.ok===true?'var(--ok)':r.ok==='part'?'#9a5b00':'var(--bad)')+'">'+esc(r.t)+'</td><td style="white-space:nowrap">'+(c.retrait?'':'<button class="btn xs" onclick="retire(\''+c.id+'\')">Retrait</button> ')+'<button class="btn xs red" onclick="delCons(\''+c.id+'\')">✕</button></td></tr>'}).join('')||'<tr><td colspan="8" class="muted">Aucun consentement enregistré.</td></tr>')+'</tbody>';
+  const now=nowRef(),A=[];S.regs.forEach(c=>{const r=canCall(c);if(r.ok===true&&(r.exp-now)/864e5<=30)A.push({k:'warn',t:c.nom+" : accord qui expire bientôt",x:"Le "+r.exp.toLocaleDateString('fr-FR')+". Il ne se renouvelle pas tacitement : proposer un nouveau formulaire si la personne le souhaite."})});
+  const inv=S.regs.filter(c=>!c.retrait&&canCall(c).ok===false&&!/expiré/.test(canCall(c).t));if(inv.length)A.push({k:'bad',t:inv.length+" accord(s) non valable(s)",x:inv.map(c=>c.nom).join(', ')+" : ne pas appeler. Les recontacter par un canal autorisé (courrier) pour leur proposer le formulaire."});
+  const es=S.regs.filter(c=>c.obj==='estim'&&canCall(c).ok==='part');if(es.length)A.push({k:'info',t:es.length+" demande(s) d'estimation",x:"Rappeler pour traiter la demande ; pendant l'échange, proposer le formulaire d'accord pour les autres services."});
+  el('consAl').innerHTML=A.map(a=>'<div class="rule '+a.k+'"><b>'+esc(a.t)+'</b>'+esc(a.x)+'</div>').join('')||'<div class="rule ok"><b>Registre à jour</b></div>';doCall()}
+function doCall(){const q=el('qCall').value.trim().toLowerCase().replace(/\s/g,'');if(!q){el('callRes').innerHTML='<p class="small muted">Tapez un nom ou un numéro avant tout appel.</p>';return}const R=S.regs.filter(c=>(c.nom+c.tel).toLowerCase().replace(/\s/g,'').includes(q));
+  el('callRes').innerHTML=R.length?R.map(c=>{const r=canCall(c);return '<div class="rule '+(r.ok===true?'ok':r.ok==='part'?'warn':'bad')+'"><b>'+esc(c.nom)+' · '+esc(c.tel)+'</b>'+esc(r.t)+'</div>'}).join(''):'<div class="rule bad"><b>Aucun accord enregistré</b>Ne pas appeler. Utiliser un canal autorisé (courrier, rencontre) pour proposer le formulaire.</div>'}
+el('qCall').addEventListener('input',doCall);
+function exportReg(){download('registre-consentements-'+realToday()+'.csv','﻿'+['nom;telephone;date_heure;origine;objet;acte_positif;cinq_mentions;preuve;validite_mois;retrait;statut'].concat(S.regs.map(c=>[c.nom,c.tel,fmtDT(c.date),ORIG[c.orig],c.obj==='estim'?'demande d\'estimation':'services de l\'agence',c.coche?'oui':'non',c.ment?'oui':'non',c.preuve,c.val,fr(c.retrait),canCall(c).t].map(csvq).join(';'))).join('\n'),'text/csv;charset=utf-8')}
+
+/* ---------- bailleurs ---------- */
+const BF=[['bTyp','typ'],['bPc','pc'],['bProv','prov'],['bDpe','dpe'],['bSurf','surf'],['bLoyer','loyer'],['bVal','val'],['bCh','ch'],['bH','h'],['bTrav','trav'],['bAides','aides'],['bDur','dur'],['bPv','pv'],['bDec','dec'],['bHon','hon'],['bDate','date']];
+const BAN={G:'2025-01-01',F:'2028-01-01',E:'2034-01-01',D:null};
+function bailCalc(){const b=S.bail,h=Math.max(1,N(b.h)),d0=b.date||today(),end=addDays(d0,Math.round(h*365.25)),L=N(b.loyer),ch=N(b.ch),V=N(b.val),hon=N(b.hon)/100;
+  const ban=BAN[b.dpe];let mLoc=h*12;if(ban){mLoc=ban<=d0?0:Math.min(h*12,Math.max(0,diffDays(d0,ban)/30.44))}
+  const sell={cash:V*(1-hon),fin:0};sell.tot=sell.cash;
+  const keep={loyers:L*mLoc,charges:ch*h,fin:V*(1-N(b.dec)/100)*(1-hon)};keep.tot=keep.loyers-keep.charges+keep.fin;keep.mLoc=mLoc;
+  const reno={travaux:N(b.trav)-N(b.aides),loyers:L*Math.max(0,h*12-N(b.dur)),charges:ch*h,fin:V*(1+N(b.pv)/100)*(1-hon)};reno.tot=reno.loyers-reno.charges-reno.travaux+reno.fin;
+  return {b,h,d0,end,ban,sell,keep,reno}}
+function renderBail(){const b=S.bail;BF.forEach(([i,k])=>{el(i).value=b[k]==null?'':b[k]});renderBailRep();const C=bailCalc();
+  if(!N(b.val)){el('bailRes').innerHTML='<p class="muted small">Indiquez au moins la valeur de vente et le loyer.</p>';el('bailTxt').textContent='';return}
+  const best=[['Vendre maintenant',C.sell.tot],['Garder et louer sans travaux',C.keep.tot],['Rénover puis louer',C.reno.tot]].sort((a,b)=>b[1]-a[1])[0][0];
+  el('bailRes').innerHTML='<table class="t"><thead><tr><th></th><th class="num">Vendre maintenant</th><th class="num">Louer sans travaux</th><th class="num">Rénover puis louer</th></tr></thead><tbody>'+[["Loyers perçus",'—',eur0(C.keep.loyers)+'<div class="small muted">'+num(C.keep.mLoc,0)+' mois</div>',eur0(C.reno.loyers)],["Charges du bailleur",'—','− '+eur0(C.keep.charges),'− '+eur0(C.reno.charges)],["Travaux (aides déduites)",'—','—','− '+eur0(C.reno.travaux)],["Vente (honoraires déduits)",eur0(C.sell.cash)+'<div class="small muted">maintenant</div>',eur0(C.keep.fin)+'<div class="small muted">dans '+C.h+' ans, décote '+b.dec+' %</div>',eur0(C.reno.fin)+'<div class="small muted">dans '+C.h+' ans, +'+b.pv+' %</div>'],["<b>Total</b>",'<b>'+eur0(C.sell.tot)+'</b>','<b>'+eur0(C.keep.tot)+'</b>','<b>'+eur0(C.reno.tot)+'</b>']].map(r=>'<tr><td>'+r[0]+'</td><td class="num">'+r[1]+'</td><td class="num">'+r[2]+'</td><td class="num">'+r[3]+'</td></tr>').join('')+'</tbody></table>'+(C.ban?'<div class="rule '+(C.ban<=C.d0?'bad':'warn')+'"><b>Logement classé '+b.dpe+'</b>'+(C.ban<=C.d0?'Interdit à la (re)location depuis le '+fr(C.ban)+' selon le calendrier en vigueur : sans travaux, plus de nouveau bail.':'Interdit à la location à partir du '+fr(C.ban)+' selon le calendrier en vigueur : '+num(C.keep.mLoc,0)+' mois de loyers possibles sans travaux.')+' Projet de loi « Relance logement » en cours d\'examen (sursis possible si le propriétaire s\'engage à faire les travaux) : vérifier le texte applicable.</div>':'')+'<p class="small muted">Comparaison simplifiée, sans impôts ni placement de l\'argent de la vente. Elle aide à décider ; elle ne remplace pas un conseil fiscal.</p>';
+  el('bailTxt').textContent="Sur "+C.h+" ans, l'option qui rapporte le plus selon ces hypothèses est : « "+best+" ».\n- Vendre maintenant : "+eur0(C.sell.tot)+" tout de suite, sans risque ni travaux.\n- Louer sans travaux : "+eur0(C.keep.tot)+(C.ban?" (location possible "+num(C.keep.mLoc,0)+" mois seulement)":"")+".\n- Rénover puis louer : "+eur0(C.reno.tot)+", avec "+eur0(C.reno.travaux)+" de travaux à financer.\nChaque situation est différente : nous pouvons affiner avec un diagnostic et un avis de valeur gratuits."}
+BF.forEach(([i,k])=>el(i).addEventListener('input',()=>{S.bail[k]=el(i).value;save();renderBail()}));
+function valFromObs(){const s=N(S.bail.surf);if(!s||!DV().length){toast('Surface et ventes chargées nécessaires');return}const lim=addDays(today(),-365*3);const R=DV().filter(r=>r[1]==='A'&&r[0]>=lim);const m=med(R.map(pm2));if(!m){toast('Pas assez de ventes');return}S.bail.val=Math.round(m*s/1000)*1000;save();renderBail();toast('Valeur : médiane des appartements sur 3 ans × surface')}
+function printBail(){printHTML('<h2 style="margin:0">'+esc(settings.shop||'[Agence]')+' · Louer, rénover ou vendre ?</h2><p>Logement classé '+esc(S.bail.dpe)+', '+esc(S.bail.surf)+' m², comparaison sur '+esc(S.bail.h)+' ans au '+fr(S.bail.date||today())+'</p>'+el('bailRes').innerHTML+'<div style="white-space:pre-wrap;border:1px solid #ccc;border-radius:8px;padding:10px;margin-top:10px">'+esc(el('bailTxt').textContent)+'</div>')}
+
+/* ---------- réseau et campagnes ---------- */
+function addCamp(){const n=el('kNom').value.trim()||el('kType').value;S.camps.push({id:uid('k'),nom:n,type:el('kType').value,date:el('kDate').value||today(),q:N(el('kQ').value),cout:N(el('kCout').value),cont:N(el('kCont').value),cons:N(el('kCons').value),rdv:N(el('kRdv').value),man:N(el('kMan').value)});['kNom','kQ','kCout','kCont','kCons','kRdv','kMan'].forEach(i=>el(i).value='');save();renderRes()}
+function addAmb(){const n=el('aNom').value.trim();if(!n){toast('Nom ?');return}S.ambs.push({id:uid('a'),nom:n,type:el('aType').value,cont:el('aCont').value.trim(),app:N(el('aApp').value),man:N(el('aMan').value),merci:el('aMerci').value});['aNom','aCont','aApp','aMan','aMerci'].forEach(i=>el(i).value='');save();renderRes()}
+function delK(id){S.camps=S.camps.filter(x=>x.id!==id);save();renderRes()}function delA(id){S.ambs=S.ambs.filter(x=>x.id!==id);save();renderRes()}
+function setAmb(id,k,v){const a=S.ambs.find(x=>x.id===id);a[k]=k==='merci'?v:N(v);save();renderRes()}
+function renderRes(){const K=S.camps,Am=S.ambs;const T=K.reduce((s,k)=>({cout:s.cout+k.cout,cont:s.cont+k.cont,cons:s.cons+k.cons,rdv:s.rdv+k.rdv,man:s.man+k.man}),{cout:0,cont:0,cons:0,rdv:0,man:0});const ap=Am.reduce((s,a)=>s+a.app,0),am=Am.reduce((s,a)=>s+a.man,0);
+  el('kpiR').innerHTML=[[T.cont+ap,"Contacts reçus",T.cont+" par les campagnes, "+ap+" par le réseau"],[T.cons,"Consentements","taux "+pct(T.cont?T.cons/T.cont:null)],[T.rdv,"Rendez-vous d'estimation",""],[T.man+am,"Mandats signés","transformation "+pct(T.rdv?T.man/T.rdv:null)],[T.man?eur0(T.cout/T.man):'—',"Coût par mandat (campagnes)",eur0(T.cout)+" dépensés"]].map(k=>'<div class="kpi"><div class="v">'+k[0]+'</div><div class="l">'+k[1]+'</div><div class="o muted">'+k[2]+'</div></div>').join('');
+  el('campTable').innerHTML='<thead><tr><th>Campagne</th><th class="num">Qté</th><th class="num">Coût</th><th class="num">Contacts</th><th class="num">Accords</th><th class="num">RDV</th><th class="num">Mandats</th><th class="num">Coût par mandat</th><th></th></tr></thead><tbody>'+(K.map(k=>'<tr><td><b>'+esc(k.nom)+'</b><div class="small muted">'+esc(k.type)+' · '+fr(k.date)+'</div></td><td class="num">'+k.q+'</td><td class="num">'+eur0(k.cout)+'</td><td class="num">'+k.cont+(k.q?'<div class="small muted">'+pct(k.cont/k.q)+'</div>':'')+'</td><td class="num">'+k.cons+'</td><td class="num">'+k.rdv+'</td><td class="num">'+k.man+'</td><td class="num">'+(k.man?eur0(k.cout/k.man):'—')+'</td><td><button class="btn xs red" onclick="delK(\''+k.id+'\')">✕</button></td></tr>').join('')||'<tr><td colspan="9" class="muted">Aucune campagne.</td></tr>')+'</tbody>';
+  el('ambTable').innerHTML='<thead><tr><th>Partenaire</th><th class="num">Contacts apportés</th><th class="num">Mandats</th><th>Dernier merci</th><th></th></tr></thead><tbody>'+(Am.slice().sort((a,b)=>b.man-a.man||b.app-a.app).map(a=>'<tr><td><b>'+esc(a.nom)+'</b><div class="small muted">'+esc(a.type)+(a.cont?' · '+esc(a.cont):'')+'</div></td><td class="num"><input type="number" min="0" value="'+a.app+'" onchange="setAmb(\''+a.id+'\',\'app\',this.value)" style="width:60px"></td><td class="num"><input type="number" min="0" value="'+a.man+'" onchange="setAmb(\''+a.id+'\',\'man\',this.value)" style="width:60px"></td><td><input type="date" value="'+esc(a.merci||'')+'" onchange="setAmb(\''+a.id+'\',\'merci\',this.value)" style="padding:3px 5px;font-size:12px;border-radius:7px"></td><td><button class="btn xs red" onclick="delA(\''+a.id+'\')">✕</button></td></tr>').join('')||'<tr><td colspan="5" class="muted">Aucun partenaire.</td></tr>')+'</tbody>';
+  const A=[];const KK=K.filter(k=>k.man).sort((a,b)=>a.cout/a.man-b.cout/b.man);if(KK.length)A.push({k:'ok',t:"Canal le plus rentable : "+KK[0].nom,x:eur0(KK[0].cout/KK[0].man)+" par mandat."});
+  K.filter(k=>k.cout&&!k.man&&k.cont).forEach(k=>A.push({k:'warn',t:k.nom+" : des contacts mais aucun mandat",x:k.cont+" contacts, "+k.rdv+" rendez-vous : travailler la transformation (relance, qualité de l'estimation)."}));
+  K.filter(k=>k.cont&&k.cons/k.cont<0.3).forEach(k=>A.push({k:'info',t:k.nom+" : peu d'accords",x:"Seulement "+pct(k.cons/k.cont)+" des contacts ont donné leur accord : présenter plus clairement le formulaire."}));
+  Am.filter(a=>a.app&&(!a.merci||diffDays(a.merci,today())>90)).forEach(a=>A.push({k:'info',t:"Remercier "+a.nom,x:a.app+" contact(s) apporté(s) ; dernier remerciement "+(a.merci?"le "+fr(a.merci):"jamais")+"."}));
+  if(am&&T.man&&am>=T.man)A.push({k:'ok',t:"Le réseau rapporte autant que les campagnes",x:am+" mandats grâce aux ambassadeurs et prescripteurs."});
+  el('resAl').innerHTML=A.map(a=>'<div class="rule '+a.k+'"><b>'+esc(a.t)+'</b>'+esc(a.x)+'</div>').join('')||'<p class="muted small">Ajoutez campagnes et partenaires.</p>';
+  el('crTxt').value=["Objet : prospection vendeurs · point au "+fr(today()),"","- Contacts : "+(T.cont+ap)+" ("+T.cont+" campagnes, "+ap+" réseau)","- Consentements : "+T.cons+" ("+pct(T.cont?T.cons/T.cont:null)+" des contacts des campagnes)","- Rendez-vous d'estimation : "+T.rdv,"- Mandats : "+(T.man+am)+" ("+T.man+" campagnes, "+am+" réseau)","- Coût par mandat (campagnes) : "+(T.man?eur0(T.cout/T.man):'—'),"",...A.map(a=>"- "+a.t+" : "+a.x),"","Prochaines actions : [à compléter]"].join("\n")}
+
+/* ---------- DPE et loyers ---------- */
+const ADEME='https://data.ademe.fr/data-fair/api/v1/datasets/dpe03existant';
+const LOYDS='https://www.data.gouv.fr/api/1/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2025/';
+const LAB=['A','B','C','D','E','F','G'];const LABC={A:'#009c6d',B:'#52b153',C:'#78bd76',D:'#f4e70f',E:'#f0b50f',F:'#eb8235',G:'#d7221f'};
+const LT={app:"Appartements (tous)",app12:"Appartements T1-T2",app3:"Appartements T3 et plus",mai:"Maisons"};
+function comCode(){const C=coms(),m=S.dvfMeta.coms||{};const inp=(el('cCode').value||'').trim().toUpperCase();const ok=/^[0-9AB]{5}$/.test(inp)?inp:'';
+  if(S.fcom)return (m[S.fcom]||{}).code||ok;if(C.length===1)return (m[C[0].c]||{}).code||S.dvfMeta.code||ok;if(!C.length)return ok;return ''}
+function codeName(code){if(S.fcom)return S.fcom;const C=coms();if(C.length===1)return C[0].c;return (S.dpe[code]||{}).nom||(S.loy[code]||{}).nom||code}
+function rememberCode(code){if(S.fcom){S.dvfMeta.coms=S.dvfMeta.coms||{};S.dvfMeta.coms[S.fcom]=Object.assign(S.dvfMeta.coms[S.fcom]||{},{code})}}
+function aggParse(a){return (a.aggs||[]).map(x=>({v:x.value,n:x.total||0,sub:x.aggs||[]}))}
+function labsOf(list){const o={};list.forEach(x=>{if(LAB.includes(x.v))o[x.v]=(o[x.v]||0)+x.n});return o}
+async function ademeAgg(code,field,size){const u=ADEME+'/values_agg?field='+encodeURIComponent(field)+'&qs='+encodeURIComponent('code_insee_ban:"'+code+'"')+'&agg_size='+size;const r=await fetch(u);if(!r.ok)throw new Error('http '+r.status);return r.json()}
+function dpeCsvUrl(code){return ADEME+'/lines?format=csv&size=10000&select=etiquette_dpe,type_batiment,nom_rue_ban&qs='+encodeURIComponent('code_insee_ban:"'+code+'"')}
+async function loadDPE(){const code=comCode();if(!code){toast('Choisissez une commune enregistrée, ou saisissez son code INSEE');return}rememberCode(code);el('enMsg').textContent='Interrogation de la base des DPE…';
+  try{const a=await ademeAgg(code,'etiquette_dpe',20);const lab=labsOf(aggParse(a));const n=LAB.reduce((s,k)=>s+(lab[k]||0),0);if(!n)throw new Error('vide');
+    const D={nom:codeName(code),n,lab,types:{},rues:[],maj:realToday(),src:'api'};
+    try{aggParse(await ademeAgg(code,'type_batiment;etiquette_dpe',10)).forEach(t=>{D.types[t.v]=labsOf(aggParse({aggs:t.sub}))})}catch(e){}
+    try{aggParse(await ademeAgg(code,'nom_rue_ban;etiquette_dpe',500)).forEach(t=>{if(t.v&&t.n>=10)D.rues.push({v:t.v,n:t.n,lab:labsOf(aggParse({aggs:t.sub}))})})}catch(e){}
+    S.dpe[code]=D;save();renderApp();el('enMsg').innerHTML='<div class="rule ok"><b>'+n+' DPE chargés</b>Base de l\'ADEME, DPE réalisés depuis juillet 2021.</div>'}
+  catch(e){el('enMsg').innerHTML='<div class="rule warn"><b>Chargement direct impossible depuis ce navigateur</b>Téléchargez <a href="'+esc(dpeCsvUrl(code))+'" target="_blank" rel="noopener">le fichier des DPE de la commune</a>, puis importez-le avec « Importer un fichier DPE ».</div>'}}
+function splitCsv(text){const lines=text.replace(/^﻿/,'').split(/\r?\n/).filter(x=>x.trim());const sep=(lines[0].match(/;/g)||[]).length>(lines[0].match(/,/g)||[]).length?';':',';
+  const pl=l=>{const o=[];let c='',q=false;for(let i=0;i<l.length;i++){const ch=l[i];if(q){if(ch==='"'){if(l[i+1]==='"'){c+='"';i++}else q=false}else c+=ch}else if(ch==='"')q=true;else if(ch===sep){o.push(c);c=''}else c+=ch}o.push(c);return o};
+  return {h:pl(lines[0]).map(x=>x.trim()),rows:lines.slice(1).map(pl)}}
+el('impDPE').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const code=comCode()||'import';const rd=new FileReader();rd.onload=()=>{try{const T=splitCsv(rd.result);const fi=re=>T.h.findIndex(x=>re.test(x));const iE=fi(/^(etiquette_dpe|etiquette dpe|étiquette dpe)$/i),iT=fi(/type.?b[aâ]timent/i),iR=fi(/nom.?rue/i);if(iE<0)throw 0;
+   const D={nom:codeName(code),n:0,lab:{},types:{},rues:[],maj:realToday(),src:'csv'};const RU={};T.rows.forEach(r=>{const l=(r[iE]||'').trim().toUpperCase();if(!LAB.includes(l))return;D.n++;D.lab[l]=(D.lab[l]||0)+1;if(iT>=0&&r[iT]){const t=r[iT].trim().toLowerCase();D.types[t]=D.types[t]||{};D.types[t][l]=(D.types[t][l]||0)+1}if(iR>=0&&r[iR]){const v=r[iR].trim();RU[v]=RU[v]||{};RU[v][l]=(RU[v][l]||0)+1}});
+   Object.keys(RU).forEach(v=>{const n=LAB.reduce((s,k)=>s+(RU[v][k]||0),0);if(n>=10)D.rues.push({v,n,lab:RU[v]})});if(!D.n)throw 0;rememberCode(code);S.dpe[code]=D;save();renderApp();el('enMsg').innerHTML='<div class="rule ok"><b>'+D.n+' DPE importés</b>'+esc(f.name)+'</div>'}catch(err){toast('Fichier DPE non reconnu')}};rd.readAsText(f);e.target.value=''});
+function loyRow(T,code){const fi=re=>T.h.findIndex(x=>re.test(x));const iC=fi(/^INSEE_C$/i),iM=fi(/^loypredm2$/i);if(iC<0||iM<0)return null;const iL=fi(/^lwr\.IPm2$/i),iU=fi(/^upr\.IPm2$/i),iT=fi(/^TYPPRED$/i),iN=fi(/^nbobs_com$/i),iR=fi(/^R2_adj$/i),iG=fi(/^LIBGEO$/i);
+  const r=T.rows.find(x=>(x[iC]||'').trim().toUpperCase()===code);if(!r)return {none:true};return {m:N(r[iM]),lo:iL>=0?N(r[iL]):null,hi:iU>=0?N(r[iU]):null,typ:iT>=0?r[iT]:'',n:iN>=0?N(r[iN]):null,r2:iR>=0?N(r[iR]):null,nom:iG>=0?r[iG]:''}}
+function loyKind(s){s=String(s||'').toLowerCase();if(/app.?12|t1.?t2/.test(s))return 'app12';if(/app.?3|t3/.test(s))return 'app3';if(/mai/.test(s))return 'mai';if(/app/.test(s))return 'app';return ''}
+async function loadLoy(){const code=comCode();if(!code){toast('Choisissez une commune enregistrée, ou saisissez son code INSEE');return}rememberCode(code);el('enMsg').textContent='Recherche des fichiers de la carte des loyers…';
+  try{const j=await (await fetch(LOYDS)).json();const res=(j.resources||[]).filter(r=>/csv/i.test((r.format||'')+r.url));const L=Object.assign({},S.loy[code]||{},{nom:codeName(code),maj:realToday()});let k=0;
+    for(const r of res){const kind=loyKind(r.title+' '+r.url);if(!kind||L[kind]&&L[kind].src==='api'&&L.maj===realToday()&&false)continue;el('enMsg').textContent='Lecture : '+LT[kind]+'…';const T=splitCsv(await (await fetch(r.url)).text());const v=loyRow(T,code);if(v&&!v.none){v.src='api';L[kind]=v;k++;if(v.nom)L.nom=L.nom||v.nom}}
+    if(!k)throw new Error('absent');S.loy[code]=L;save();renderApp();el('enMsg').innerHTML='<div class="rule ok"><b>Loyers chargés ('+k+' types de logement)</b>Carte des loyers 2025 (ministère du Logement, ANIL).</div>'}
+  catch(e){el('enMsg').innerHTML='<div class="rule warn"><b>Chargement direct impossible depuis ce navigateur</b>Téléchargez les fichiers sur <a href="https://www.data.gouv.fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2025/" target="_blank" rel="noopener">data.gouv.fr</a> et importez-les, ou saisissez les loyers à la main (lien vers la carte du ministère ci-dessous).</div>'}}
+el('impLoy').addEventListener('change',e=>{const F=[...e.target.files];const code=comCode();if(!code){toast('Choisissez d\'abord la commune');e.target.value='';return}let k=0,ok=0;const L=Object.assign({},S.loy[code]||{},{nom:codeName(code),maj:realToday()});
+  F.forEach(f=>{const rd=new FileReader();rd.onload=()=>{try{const kind=loyKind(f.name)||'app';const v=loyRow(splitCsv(rd.result),code);if(v&&!v.none){v.src='csv';L[kind]=v;ok++}}catch(err){}if(++k===F.length){if(ok){rememberCode(code);S.loy[code]=L;save();renderApp()}el('enMsg').innerHTML=ok?'<div class="rule ok"><b>'+ok+' fichier(s) de loyers lus</b>Commune '+esc(code)+'.</div>':'<div class="rule warn"><b>Commune introuvable dans ces fichiers</b>Vérifiez le code INSEE ('+esc(code)+').</div>'}};rd.readAsText(f)});e.target.value=''});
+function saveLoyMan(){const code=comCode();if(!code){toast('Choisissez d\'abord la commune');return}const L=Object.assign({},S.loy[code]||{},{nom:codeName(code),maj:realToday()});let k=0;[['lmApp','app'],['lmApp12','app12'],['lmApp3','app3'],['lmMai','mai']].forEach(([i,t])=>{const v=N(el(i).value);if(v){L[t]={m:v,lo:null,hi:null,typ:'saisie',n:null,r2:null,src:'man'};k++}});if(!k){toast('Saisissez au moins un loyer');return}rememberCode(code);S.loy[code]=L;save();renderApp();toast('Loyers enregistrés')}
+const fiable=v=>v&&v.src!=='man'&&((v.r2!=null&&v.r2<0.5)||(v.n!=null&&v.n<30))?false:true;
+function pFG(D){return D&&D.n?((D.lab.F||0)+(D.lab.G||0))/D.n:null}
+function pEFG(D){return D&&D.n?((D.lab.E||0)+(D.lab.F||0)+(D.lab.G||0))/D.n:null}
+function dpeBars(lab,n){return LAB.map(k=>{const v=lab[k]||0,p=n?v/n:0;return '<div style="display:flex;align-items:center;gap:6px;margin:2px 0"><div style="width:22px;text-align:center;font-weight:900;color:#fff;background:'+LABC[k]+';border-radius:4px">'+k+'</div><div style="flex:1;background:#eef2f7;border-radius:4px;height:16px"><div style="width:'+(p*100)+'%;background:'+LABC[k]+';height:16px;border-radius:4px"></div></div><div class="small" style="width:92px;text-align:right">'+v+' · '+pct(p,0)+'</div></div>'}).join('')}
+function rendBrut(t){const code=comCode(),L=S.loy[code];if(!L)return null;const v=t==='M'?L.mai:L.app;const Y=years().slice(-2);const R=DV().filter(r=>r[1]===t&&Y.some(y=>r[0].startsWith(y)));if(!v||R.length<5)return null;const pm=med(R.map(pm2));return {loy:v.m,pm,rb:v.m*12/pm,n:R.length,per:Y.join('-')}}
+function renderEnergy(){const code=comCode();const D=S.dpe[code],L=S.loy[code];
+  el('enCom').innerHTML=code?'Commune : <b>'+esc(codeName(code))+'</b> (code '+esc(code)+'). Statistiques seulement : aucune liste de logements.':(coms().length>1?'Choisissez une commune ci-dessus (pas « Toutes ») pour charger ses DPE et ses loyers.':'Chargez d\'abord les ventes d\'une commune, ou saisissez son code INSEE plus haut.');
+  if(D&&D.n){const ty=Object.keys(D.types||{}).filter(t=>/appart|maison/i.test(t));const R=(D.rues||[]).map(x=>Object.assign({},x,{fg:((x.lab.F||0)+(x.lab.G||0))/x.n,efg:((x.lab.E||0)+(x.lab.F||0)+(x.lab.G||0))/x.n})).sort((a,b)=>b.fg-a.fg);
+    el('dpeBox').innerHTML='<div class="kpis" style="grid-template-columns:repeat(3,1fr);margin:0 0 8px"><div class="kpi"><div class="v">'+D.n+'</div><div class="l">DPE réalisés</div></div><div class="kpi"><div class="v" style="color:#d7221f">'+pct(pFG(D),0)+'</div><div class="l">en F ou G</div></div><div class="kpi"><div class="v" style="color:#b45309">'+pct(pEFG(D),0)+'</div><div class="l">en E, F ou G</div></div></div>'+dpeBars(D.lab,D.n)+
+     (ty.length?'<table class="t" style="margin-top:8px"><thead><tr><th>Type</th><th class="num">DPE</th><th class="num">F ou G</th><th class="num">E, F ou G</th></tr></thead><tbody>'+ty.map(t=>{const l=D.types[t],n=LAB.reduce((s,k)=>s+(l[k]||0),0);return '<tr><td>'+esc(t.charAt(0).toUpperCase()+t.slice(1))+'</td><td class="num">'+n+'</td><td class="num">'+pct(n?((l.F||0)+(l.G||0))/n:null,0)+'</td><td class="num">'+pct(n?((l.E||0)+(l.F||0)+(l.G||0))/n:null,0)+'</td></tr>'}).join('')+'</tbody></table>':'')+
+     (R.length?'<h3>Rues d\'au moins 10 DPE (les plus concernées)</h3><table class="t"><thead><tr><th>Rue</th><th class="num">DPE</th><th class="num">F ou G</th><th class="num">E, F ou G</th></tr></thead><tbody>'+R.slice(0,10).map(x=>'<tr><td>'+esc(x.v)+'</td><td class="num">'+x.n+'</td><td class="num">'+pct(x.fg,0)+'</td><td class="num">'+pct(x.efg,0)+'</td></tr>').join('')+'</tbody></table>':'')+
+     '<p class="small muted">Parmi les DPE réalisés depuis juillet 2021 (ventes, locations…), pas parmi tous les logements. Chargés le '+fr(D.maj)+'.</p>'}
+  else el('dpeBox').innerHTML='<p class="muted small">Aucun DPE chargé pour cette commune.</p>';
+  if(L&&['app','app12','app3','mai'].some(k=>L[k])){const ra=rendBrut('A'),rm=rendBrut('M');
+    el('loyBox').innerHTML='<table class="t"><thead><tr><th>Logement</th><th class="num">€/m² charges comprises</th><th class="num">Fourchette</th><th>Fiabilité</th></tr></thead><tbody>'+['app','app12','app3','mai'].filter(k=>L[k]).map(k=>{const v=L[k];return '<tr><td>'+LT[k]+'</td><td class="num"><b>'+num(v.m,1)+' €</b></td><td class="num small">'+(v.lo?num(v.lo,1)+' à '+num(v.hi,1)+' €':'—')+'</td><td class="small">'+(v.src==='man'?'Saisi à la main':(fiable(v)?'Correcte':'<span style="color:#9a5b00">⚠ À prendre avec prudence</span>')+'<div class="muted">'+(/commune/i.test(v.typ)?'calculé sur la commune':'calculé sur un groupe de communes')+(v.n!=null?', '+v.n+' annonces':'')+'</div>')+'</td></tr>'}).join('')+'</tbody></table>'+
+     '<h3>Rentabilité brute indicative</h3>'+[['Appartements',ra],['Maisons',rm]].map(([t,x])=>x?'<div class="rule info"><b>'+t+' : '+pct(x.rb)+'</b>'+num(x.loy,1)+' € × 12 ÷ '+eur0(x.pm)+' le m² (prix médian DVF '+x.per+', '+x.n+' ventes). Avant charges, impôts, vacance et travaux.</div>':'').join('')+
+     '<p class="small muted">Loyers d\'annonce estimés pour un logement vide mis en location au 3e trimestre 2025 (carte des loyers, ministère du Logement et ANIL) : ce ne sont pas des loyers moyens.</p>'}
+  else el('loyBox').innerHTML='<p class="muted small">Aucun loyer chargé pour cette commune.</p>'}
+function obsExtra(f){const code=comCode(),D=S.dpe[code],L=S.loy[code];let h='';
+  if(S.obs.dpe==='1'&&D&&D.n)h+='<div style="margin:8px 0"><b>Énergie</b> : sur '+D.n+' diagnostics (DPE) réalisés depuis juillet 2021 dans la commune, '+pct(pFG(D),0)+' classent le logement en F ou G et '+pct(pEFG(D),0)+' en E, F ou G. Rénover, louer ou vendre : nous pouvons vous aider à comparer.</div>';
+  if(S.obs.loy==='1'&&L&&(L.app||L.mai))h+='<div style="margin:8px 0"><b>Location</b> : loyer de marché estimé '+(L.app?num(L.app.m,1)+' € le m² pour un appartement':'')+(L.app&&L.mai?', ':'')+(L.mai?num(L.mai.m,1)+' € le m² pour une maison':'')+' (charges comprises, carte des loyers 2025).</div>';return h}
+function loyFromObs(){const b=S.bail,s=N(b.surf),L=S.loy[comCode()];if(!s){toast('Surface ?');return}if(!L){toast('Chargez d\'abord les loyers de la commune (onglet 1)');return}const pc=N(b.pc);const v=b.typ==='M'?L.mai:(pc&&pc<=2&&L.app12?L.app12:pc>=3&&L.app3?L.app3:L.app);if(!v){toast('Pas de loyer pour ce type de logement');return}
+  b.loyer=Math.round(v.m*s-N(b.prov));save();renderBail();toast('Loyer : '+num(v.m,1)+' € × '+s+' m²'+(N(b.prov)?' − '+N(b.prov)+' € de charges':' (charges comprises : indiquez la provision de charges)'))}
+function renderBailRep(){const b=S.bail,code=comCode(),D=S.dpe[code],L=S.loy[code],out=[];
+  if(D&&D.n&&LAB.includes(b.dpe)){const i=LAB.indexOf(b.dpe),w=LAB.slice(i).reduce((s,k)=>s+(D.lab[k]||0),0);out.push('<div class="rule info"><b>Classe '+b.dpe+' ou moins bien : '+pct(w/D.n,0)+' des DPE de la commune</b>Sur '+D.n+' DPE réalisés depuis juillet 2021. Le logement n\'est pas un cas isolé : beaucoup de propriétaires ont la même décision à prendre.</div>')}
+  if(L){const pc=N(b.pc),v=b.typ==='M'?L.mai:(pc&&pc<=2&&L.app12?L.app12:pc>=3&&L.app3?L.app3:L.app);if(v&&N(b.surf))out.push('<div class="rule info"><b>Loyer de marché : environ '+eur0(v.m*N(b.surf))+' par mois charges comprises</b>'+num(v.m,1)+' € le m² × '+b.surf+' m²'+(fiable(v)?'':' (estimation à prendre avec prudence)')+'.</div>')}
+  if(N(b.loyer)&&N(b.val))out.push('<div class="rule ok"><b>Rendement brut actuel : '+pct(N(b.loyer)*12/N(b.val))+'</b>'+eur0(N(b.loyer))+' × 12 ÷ '+eur0(N(b.val))+'.</div>');
+  el('bailRep').innerHTML=out.join('')||'<p class="muted small">Chargez les DPE et les loyers de la commune (onglet 1), puis indiquez la surface.</p>'}
+/* ---------- dossier de mandat ---------- */
+const DIAG={dpe:"Diagnostic de performance énergétique (DPE)",audit:"Audit énergétique",amiante:"Amiante",plomb:"Plomb (CREP)",gaz:"Installation de gaz",elec:"Installation électrique",termites:"Termites",erp:"État des risques (ERP)",ass:"Assainissement non collectif",bruit:"Bruit d'aérodrome",carrez:"Surface « loi Carrez »",boutin:"Surface habitable"};
+function blankDoss(){return {id:uid('d'),nom:'',adr:'',mand:'vente',bien:'appart',cons:'av97',dpe:'',gaz:'p15',elec:'p15',ass:'coll',term:'nsp',bruit:'nsp',docs:{},autres:{}}}
+function curD(){S.dossiers=S.dossiers||[];let d=S.dossiers.find(x=>x.id===S.dcur);if(!d){d=S.dossiers[0];if(!d){d=blankDoss();S.dossiers.push(d)}S.dcur=d.id}return d}
+function newDoss(){const d=blankDoss();S.dossiers.push(d);S.dcur=d.id;save();renderDoss()}
+function delDoss(){const d=curD();ask('Supprimer le dossier « '+(d.nom||'sans nom')+' » ?',()=>{S.dossiers=S.dossiers.filter(x=>x.id!==d.id);S.dcur='';save();renderDoss()})}
+function addMonthsD(d,m){const x=new Date(d+'T12:00:00');x.setMonth(x.getMonth()+m);return iso(x)}
+function diagList(d){const V=d.mand==='vente',L=[];const add=(k,why,rule)=>L.push({k,why,rule});
+  add('dpe',"Tous les logements",{m:120,min:'2021-07-01'});
+  if(V&&d.bien!=='appart'){if(['E','F','G'].includes(d.dpe))add('audit',"Maison ou immeuble à un seul propriétaire classé "+d.dpe,{m:60});else if(!d.dpe)add('audit',"Si le DPE est E, F ou G (classe à vérifier)",{m:60,cond:true})}
+  if(d.cons!=='ap97')add('amiante',d.cons==='nsp'?"Si le permis est antérieur à juillet 1997 (à vérifier)":"Permis de construire avant juillet 1997",{amiante:true});
+  if(d.cons==='av49'||d.cons==='nsp')add('plomb',d.cons==='nsp'?"Si le logement date d'avant 1949 (à vérifier)":"Logement construit avant 1949",{plomb:true});
+  if(d.gaz==='p15')add('gaz',"Installation de plus de 15 ans",{m:V?36:72});
+  if(d.elec==='p15')add('elec',"Installation de plus de 15 ans",{m:V?36:72});
+  if(V&&d.term!=='non')add('termites',d.term==='oui'?"Zone délimitée par arrêté préfectoral":"Si la commune est en zone termites (à vérifier en mairie)",{m:6});
+  add('erp',"Tous les biens",{m:6});
+  if(V&&d.ass==='anc')add('ass',"Assainissement non collectif",{m:36});
+  if(d.bruit!=='non')add('bruit',d.bruit==='oui'?"Zone d'exposition au bruit d'un aérodrome":"Si le bien est en zone de bruit (à vérifier)",{info:true});
+  if(V&&d.bien==='appart')add('carrez',"Lot de copropriété",{info:true});
+  if(!V)add('boutin',"À indiquer dans le bail",{info:true});
+  return L}
+function diagStatus(it,doc){const r=it.rule,dt=doc&&doc.date,res=doc&&doc.res||'abs',T=today();
+  if(!dt)return {s:'manque',t:'Manquant'};
+  if(r.info)return {s:'ok',t:'Fourni'};
+  if(r.min&&dt<r.min)return {s:'perime',t:"Plus valable (DPE d'avant juillet 2021)"};
+  let fin=null;if(r.m)fin=addMonthsD(dt,r.m);
+  if(r.amiante){if(res==='abs'){if(dt<'2013-04-01')return {s:'perime',t:"À refaire (réalisé avant avril 2013)"};return {s:'ok',t:'Valable sans limite (absence)'}}fin=addMonthsD(dt,36)}
+  if(r.plomb){if(res==='abs')return {s:'ok',t:'Valable sans limite (absence)'};fin=addMonthsD(dt,S.dossiers&&curD().mand==='location'?72:12)}
+  if(fin){if(fin<T)return {s:'perime',t:'Périmé depuis le '+fr(fin),fin};const left=diffDays(T,fin);return {s:left<45?'bientot':'ok',t:(left<45?'Expire bientôt : ':'Valable jusqu\'au ')+fr(fin),fin}}
+  return {s:'ok',t:'Fourni'}}
+function autresList(d){const V=d.mand==='vente',L=[];if(V){L.push("Titre de propriété","Pièces d'identité des propriétaires","Dernier avis de taxe foncière","Mandat écrit et signé, numéroté au registre des mandats de l'agence");if(d.bien==='appart')L.push("Règlement de copropriété et état descriptif de division","Procès-verbaux des 3 dernières assemblées générales","Fiche synthétique de la copropriété","Pré-état daté (charges, impayés, fonds de travaux)","Carnet d'entretien de l'immeuble");else L.push("Plans, permis de construire et déclarations de travaux","Factures des travaux importants (garantie décennale)")}
+  else{L.push("Titre de propriété ou attestation","Pièces d'identité des propriétaires","Mandat de location ou de gestion signé, numéroté au registre des mandats");if(d.bien==='appart')L.push("Extraits du règlement de copropriété (usage, charges récupérables)")}return L}
+const DF=[['dNom','nom'],['dAdr','adr'],['dMand','mand'],['dBien','bien'],['dCons','cons'],['dDpe','dpe'],['dGaz','gaz'],['dElec','elec'],['dAss','ass'],['dTerm','term'],['dBruit','bruit']];
+DF.forEach(([i,k])=>el(i).addEventListener(el(i).tagName==='SELECT'?'change':'input',()=>{curD()[k]=el(i).value;save();renderDoss(el(i).tagName!=='SELECT')}));
+el('dSel').addEventListener('change',()=>{S.dcur=el('dSel').value;save();renderDoss()});
+function setDoc(k,f,v){const d=curD();d.docs[k]=Object.assign({},d.docs[k]||{},{[f]:v});save();renderDoss()}
+function setAutre(i,v){const d=curD();d.autres[i]=v;save();renderDoss()}
+function dossState(d){const L=diagList(d),A=autresList(d);const st=L.map(it=>Object.assign({},it,diagStatus(it,d.docs[it.k])));const okD=st.filter(x=>x.s==='ok'||x.s==='bientot').length,okA=A.filter((x,i)=>d.autres[i]).length;return {L:st,A,okD,okA,tot:st.length+A.length}}
+function renderDoss(keepText){const d=curD();el('dSel').innerHTML=S.dossiers.map(x=>'<option value="'+x.id+'"'+(x.id===d.id?' selected':'')+'>'+esc(x.nom||'Dossier sans nom')+' · '+(x.mand==='vente'?'vente':'location')+'</option>').join('');
+  DF.forEach(([i,k])=>{if(document.activeElement!==el(i))el(i).value=d[k]==null?'':d[k]});const X=dossState(d);
+  el('kpiD').innerHTML=[[X.okD+' / '+X.L.length,"Diagnostics valables",X.L.filter(x=>x.s==='perime').length+' périmé(s), '+X.L.filter(x=>x.s==='manque').length+' manquant(s)'],[X.okA+' / '+X.A.length,"Autres documents",""],[pct(X.tot?(X.okD+X.okA)/X.tot:null,0),"Dossier complet à",d.mand==='vente'?'mandat de vente':'mandat de location']].map(k=>'<div class="kpi"><div class="v">'+k[0]+'</div><div class="l">'+k[1]+'</div><div class="o muted">'+k[2]+'</div></div>').join('');
+  const col={ok:'var(--ok)',bientot:'#9a5b00',perime:'var(--bad)',manque:'var(--bad)'};
+  el('dDiag').innerHTML='<thead><tr><th>Diagnostic</th><th>Pourquoi</th><th>Date du document</th><th>Résultat</th><th>Statut</th></tr></thead><tbody>'+X.L.map(it=>{const doc=d.docs[it.k]||{};return '<tr><td><b>'+DIAG[it.k]+'</b></td><td class="small">'+esc(it.why)+'</td><td><input type="date" value="'+(doc.date||'')+'" onchange="setDoc(\''+it.k+'\',\'date\',this.value)"></td><td>'+(it.rule.amiante||it.rule.plomb?'<select class="small" onchange="setDoc(\''+it.k+'\',\'res\',this.value)"><option value="abs"'+(doc.res!=='pres'?' selected':'')+'>Absence</option><option value="pres"'+(doc.res==='pres'?' selected':'')+'>Présence</option></select>':'')+'</td><td class="small" style="font-weight:800;color:'+col[it.s]+'">'+esc(it.t)+'</td></tr>'}).join('')+'</tbody>';
+  el('dDocs').innerHTML=X.A.map((t,i)=>'<label style="display:flex;gap:8px;align-items:flex-start;margin:4px 0"><input type="checkbox" '+(d.autres[i]?'checked':'')+' onchange="setAutre('+i+',this.checked)"> <span class="small">'+esc(t)+'</span></label>').join('');
+  const M=X.L.filter(x=>x.s!=='ok').map(x=>'<div class="rule '+(x.s==='bientot'?'info':'warn')+'"><b>'+DIAG[x.k]+'</b>'+esc(x.t)+(x.rule.cond?' · '+esc(x.why):'')+'</div>').join('')+X.A.filter((t,i)=>!d.autres[i]).map(t=>'<div class="rule info"><b>'+esc(t)+'</b>À demander.</div>').join('');
+  el('dManque').innerHTML=M||'<div class="rule ok"><b>Dossier complet</b>Pensez à vérifier les dates avant la signature.</div>';
+  if(!keepText||!el('dMsg').value)el('dMsg').value=dossMsg(d,X)}
+function dossMsg(d,X){const miss=X.L.filter(x=>x.s!=='ok'),ma=X.A.filter((t,i)=>!d.autres[i]);return ["Bonjour"+(d.nom?" "+d.nom:"")+",","","Pour préparer la "+(d.mand==='vente'?"mise en vente":"mise en location")+" de votre bien"+(d.adr?" ("+d.adr+")":"")+", voici les documents qu'il nous manque :","",...(miss.length?["Diagnostics :",...miss.map(x=>"- "+DIAG[x.k]+" : "+x.t.charAt(0).toLowerCase()+x.t.slice(1)+(x.rule.cond?" ("+x.why.toLowerCase()+")":""))]:[]),...(ma.length?["","Documents :",...ma.map(t=>"- "+t)]:[]),...(!miss.length&&!ma.length?["Votre dossier est complet, merci !"]:[]),"","L'état des risques doit dater de moins de 6 mois : nous pouvons le préparer avec vous sur le site officiel.","","Bien cordialement,",(settings.shop||"[Agence]")+(settings.ville?" ("+settings.ville+")":"")].join("\n")}
+function printDoss(){const d=curD(),X=dossState(d);printHTML('<h2 style="margin:0">'+esc(settings.shop||'[Agence]')+' · Documents pour votre '+(d.mand==='vente'?'vente':'location')+'</h2><p>'+esc(d.nom||'')+(d.adr?' · '+esc(d.adr):'')+' · '+fr(today())+'</p><table><tr><th>Diagnostic</th><th>Pourquoi</th><th>Statut</th></tr>'+X.L.map(x=>'<tr><td>'+DIAG[x.k]+'</td><td>'+esc(x.why)+'</td><td>'+esc(x.t)+'</td></tr>').join('')+'</table><table><tr><th>Document</th><th>Fourni</th></tr>'+X.A.map((t,i)=>'<tr><td>'+esc(t)+'</td><td>'+(d.autres[i]?'Oui':'☐')+'</td></tr>').join('')+'</table><p style="font-size:11px">Durées de validité générales ; le diagnostiqueur et le notaire vérifient les cas particuliers.</p>')}
+
+function renderApp(){renderObs();renderEst();renderCons();renderBail();renderDoss();renderRes()}
+function onTab(t){if(t==='obs')renderObs();if(t==='est')renderEst();if(t==='cons')renderCons();if(t==='bail')renderBail();if(t==='doss')renderDoss();if(t==='res')renderRes()}
+function PITCH(){return "Depuis le 11 août, appeler les vendeurs des annonces sans leur accord est interdit. Avec ma classe, nous avons créé <em>Qualif'Mandats</em> : un observatoire des prix réels de votre quartier à distribuer avec un QR code, un registre des consentements qui dit avant chaque appel si vous avez le droit d'appeler, les DPE et les loyers de marché du quartier, un simulateur pour les propriétaires de passoires thermiques, la liste des documents de chaque mandat et le suivi de vos campagnes."}
+const DEMO_SCEN=()=>"s1";
+
+/* ---------- cas ---------- */
+function rngM(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function genDVF(){const r=rngM(42),out=[];const V=[["RUE DES LILAS",1.12,"A"],["AVENUE JEAN JAURES",1.0,"A"],["RUE DU PARC",1.18,"M"],["ALLEE DES TILLEULS",1.05,"M"],["RUE DE LA GARE",0.92,"A"],["BOULEVARD ROBERT BALLANGER",0.88,"A"],["RUE PASTEUR",1.08,"M"],["CHEMIN DES VIGNES",1.22,"M"],["RUE VICTOR HUGO",0.98,"A"],["RESIDENCE LES CEDRES",0.85,"A"],["RUE DES ECOLES",1.02,"M"],["IMPASSE DU MOULIN",1.1,"M"]];
+  const tr={2021:1,2022:1.04,2023:1.05,2024:1.0,2025:1.01};let i=0;Object.keys(tr).forEach(y=>{const n=y==='2025'?78:90;for(let k=0;k<n;k++){const v=V[Math.floor(r()*V.length)];const t=r()<(v[2]==='A'?.85:.2)?'A':'M';const s=t==='A'?Math.round(25+r()*65):Math.round(70+r()*80);const p=t==='A'?Math.max(1,Math.min(5,Math.round(s/20))):Math.max(3,Math.min(7,Math.round(s/22)));const base=t==='A'?3550:3250;const pm=base*tr[y]*v[1]*(0.85+r()*0.3)*(s<35?1.08:1);const d=y+'-'+String(1+Math.floor(r()*12)).padStart(2,'0')+'-'+String(1+Math.floor(r()*27)).padStart(2,'0');const vi=V.indexOf(v);const lat=48.958+((vi%4)-1.5)*0.0035+(r()-.5)*0.002,lon=2.535+(Math.floor(vi/4)-1)*0.005+(r()-.5)*0.003;out.push([d,t,Math.round(pm*s/100)*100,s,p,r2(lat*1e5)/1e5,r2(lon*1e5)/1e5,v[0],"Villeneuve-du-Parc (commune fictive)"]);i++}});return out}
+const dt=(d,h)=>d+'T'+h;
+function FDPE(){const R=[["Rue des Lilas",64,{A:1,B:3,C:8,D:20,E:16,F:10,G:6}],["Résidence les Cèdres",88,{A:0,B:1,C:6,D:22,E:25,F:21,G:13}],["Avenue Jean Jaurès",71,{A:1,B:4,C:12,D:25,E:17,F:8,G:4}],["Rue de la Gare",52,{A:0,B:2,C:5,D:15,E:14,F:10,G:6}],["Boulevard Robert Ballanger",47,{A:0,B:1,C:5,D:13,E:13,F:9,G:6}],["Rue du Parc",23,{A:1,B:2,C:5,D:8,E:4,F:2,G:1}],["Chemin des Vignes",18,{A:2,B:3,C:5,D:5,E:2,F:1,G:0}]];
+  const lab={A:18,B:41,C:150,D:390,E:330,F:190,G:121};return {nom:'Villeneuve-du-Parc (commune fictive)',n:1240,lab,types:{appartement:{A:9,B:26,C:104,D:290,E:250,F:140,G:91},maison:{A:9,B:15,C:46,D:100,E:80,F:50,G:30}},rues:R.map(x=>({v:x[0],n:x[1],lab:x[2]})),maj:'2026-11-13',src:'fictif'}}
+function FLOY(){return {nom:'Villeneuve-du-Parc (commune fictive)',maj:'2026-11-13',app:{m:17.2,lo:12.9,hi:22.9,typ:'commune',n:420,r2:0.71,src:'fictif'},app12:{m:19.8,lo:14.6,hi:26.8,typ:'commune',n:250,r2:0.69,src:'fictif'},app3:{m:15.4,lo:11.5,hi:20.6,typ:'commune',n:170,r2:0.66,src:'fictif'},mai:{m:13.6,lo:9.1,hi:20.3,typ:'maille',n:24,r2:0.48,src:'fictif'}}}
+const BUILTIN=[
+ {id:'s1',titre:"L'observatoire du quartier pour l'agence du Parc",entreprise:"Agence du Parc (immobilier, commune fictive)",
+  ctx:"L'Agence du Parc veut distribuer un observatoire des prix dans 1 500 boîtes aux lettres. Les ventes réelles de la commune fictive de Villeneuve-du-Parc (2021 à 2025) sont chargées dans l'onglet 1. Un client demande aussi l'estimation d'un appartement de 3 pièces, 62 m², en bon état, classé D, rue des Lilas.",
+  q:["Relevez le prix médian au m² des appartements et des maisons. Pourquoi utilise-t-on la médiane plutôt que la moyenne ?","Comment ont évolué les prix entre 2021 et 2025 ? Calculez l'évolution en %.","Quelle rue est la plus chère ? Pourquoi ne publie-t-on que les rues d'au moins 5 ventes ?","Estimez l'appartement de la rue des Lilas (onglet 2, rayon : toute la commune) et expliquez la fourchette.","Quelle part des DPE réalisés est en F ou G ? Pourquoi ne peut-on pas dire « X % des logements de la commune » ? Calculez la rentabilité brute des appartements.","Peut-on imprimer la liste des ventes avec leurs adresses sur l'observatoire ? Justifiez."],
+  points:["La médiane n'est pas faussée par quelques ventes exceptionnelles.","Évolution = (médiane de la dernière année − médiane de la première) ÷ médiane de la première.","Au moins 5 ventes : une statistique sur 1 ou 2 ventes ne veut rien dire et pourrait identifier un vendeur.","Pas de liste d'adresses : DVF sert aux statistiques, sans chercher à identifier les personnes.","La base des DPE ne contient que les logements qui ont eu un DPE depuis juillet 2021 : ce n'est pas tout le parc.","Rentabilité brute = loyer au m² × 12 ÷ prix au m², avant charges, impôts et vacance."],
+  build:()=>({ref:'2026-11-13',dvf:genDVF(),dvfMeta:{maj:'2026-11-13',coms:{'Villeneuve-du-Parc (commune fictive)':{maj:'2026-11-13',code:'99999'}}},dpe:{'99999':FDPE()},loy:{'99999':FLOY()},dossiers:[],regs:[],camps:[],ambs:[],obs:{titre:'',cta:"Recevez l'estimation gratuite de votre logement",contact:"Agence du Parc · 01 00 00 00 00",qr:'',logo:'',rues:'1',dpe:'1',loy:'0'},bail:blank().bail,est:{t:'A',s:62,p:3,adr:'rue des Lilas',g:null,ray:99999,per:3,tol:.3,adj:0}})},
+ {id:'s2',titre:"Le registre : qui a-t-on le droit d'appeler ?",entreprise:"Agence du Parc (immobilier)",
+  ctx:"Le négociateur veut appeler huit propriétaires cet après-midi, le 13 novembre 2026. Ils figurent dans le registre des consentements (onglet 3). Votre mission : dire pour chacun si l'appel est autorisé.",
+  q:["Pour chaque personne, l'appel est-il autorisé ? Justifiez.","Que faire pour les personnes qu'on n'a pas le droit d'appeler ?","Pourquoi une demande d'estimation ne suffit-elle pas pour proposer d'autres services ?","Vérifiez que le formulaire de l'agence (onglet 3) contient bien les cinq mentions obligatoires. Citez-les.","Combien de temps conserve-t-on la preuve ? Combien de temps l'accord est-il valable ?"],
+  points:["Cinq mentions : identité de l'agence et services, proposition d'accepter ou de refuser, validité d'un an au maximum, droit de retrait et ses modalités, accès à la preuve.","Case non cochée ou pré-cochée, mentions absentes, accord oral sans preuve, accord retiré ou expiré : pas d'appel.","Les recontacter par un canal autorisé (courrier, rencontre) pour leur proposer le formulaire."],
+  build:()=>({ref:'2026-11-13',dvf:[],dvfMeta:{},camps:[],ambs:[],obs:blank().obs,bail:blank().bail,est:null,form:{serv:"estimation, vente et recherche de biens immobiliers",val:12,tel:"01 00 00 00 00",mail:"contact@agenceduparc.fr",presta:""},
+   regs:[{id:'c1',nom:"Mme Durand",tel:"06 11 11 11 11",date:dt('2026-09-14','10:12'),orig:'qr',obj:'demarch',cons:'Léa',coche:true,ment:true,preuve:'Formulaire web n° 214',val:12,retrait:''},{id:'c2',nom:"M. Benali",tel:"06 22 22 22 22",date:dt('2025-10-02','15:40'),orig:'papier',obj:'demarch',cons:'Léa',coche:true,ment:true,preuve:'Formulaire papier n° 87',val:12,retrait:''},{id:'c3',nom:"M. et Mme Petit",tel:"06 33 33 33 33",date:dt('2026-10-20','11:05'),orig:'web',obj:'estim',cons:'Karim',coche:true,ment:true,preuve:'Demande d\'estimation web n° 230',val:12,retrait:''},{id:'c4',nom:"Mme Rossi",tel:"06 44 44 44 44",date:dt('2026-08-28','17:20'),orig:'web',obj:'demarch',cons:'Karim',coche:false,ment:true,preuve:'Formulaire web n° 198 (case non cochée)',val:12,retrait:''},{id:'c5',nom:"M. Martin",tel:"06 55 55 55 55",date:dt('2026-09-30','09:45'),orig:'oral',obj:'demarch',cons:'Léa',coche:true,ment:true,preuve:'',val:12,retrait:''},{id:'c6',nom:"Mme Nguyen",tel:"06 66 66 66 66",date:dt('2026-07-05','14:00'),orig:'atelier',obj:'demarch',cons:'Karim',coche:true,ment:true,preuve:'Fiche atelier bailleurs n° 12',val:12,retrait:'2026-10-02'},{id:'c7',nom:"M. Diallo",tel:"06 77 77 77 77",date:dt('2026-11-02','18:30'),orig:'ambassadeur',obj:'demarch',cons:'Léa',coche:true,ment:false,preuve:'Carte remise par la boulangerie',val:12,retrait:''},{id:'c8',nom:"Mme Lopez",tel:"06 88 88 88 88",date:dt('2025-11-25','10:00'),orig:'papier',obj:'demarch',cons:'Karim',coche:true,ment:true,preuve:'Formulaire papier n° 92',val:12,retrait:''}]})},
+ {id:'s3',titre:"Un bailleur avec un logement classé F, et le bilan des campagnes",entreprise:"Agence du Parc (immobilier)",
+  ctx:"M. Garnier possède un appartement de 48 m² classé F, loué 780 € par mois. Il hésite entre vendre, garder ou rénover (travaux de 22 000 €, 7 000 € d'aides possibles, 4 mois de travaux). Par ailleurs, le responsable veut savoir quelles actions de prospection ont rapporté des mandats.",
+  q:["Jusqu'à quand le logement peut-il être loué sans travaux, selon le calendrier en vigueur ?","Comparez les trois options sur 5 ans (onglet 4). Laquelle rapporte le plus selon ces hypothèses ?","Quelles hypothèses pourraient changer la conclusion ?","Calculez le coût par mandat de chaque campagne (onglet 6). Quel canal est le plus rentable ?","Rédigez le compte rendu au responsable et proposez deux actions."],
+  points:["Classe F : interdite à la location à partir du 1er janvier 2028 selon le calendrier de la loi Climat et Résilience ; un assouplissement est en discussion.","Coût par mandat = coût de la campagne ÷ mandats signés.","Les hypothèses (décote, plus-value, coût des travaux, aides) changent la conclusion : on les présente au client, sans décider à sa place."],
+  build:()=>({ref:'2026-11-13',dvf:[],dvfMeta:{},regs:[],obs:blank().obs,est:null,bail:{dpe:'F',surf:48,loyer:780,val:168000,ch:1900,h:5,trav:22000,aides:7000,dur:4,pv:8,dec:12,hon:5,date:'2026-11-13'},
+   camps:[{id:'k1',nom:"Observatoire quartier des Lilas",type:"Boîtage observatoire",date:'2026-09-15',q:1500,cout:420,cont:31,cons:24,rdv:9,man:3},{id:'k2',nom:"« Nous avons vendu » rue Pasteur",type:"Courrier « Nous avons vendu »",date:'2026-10-01',q:120,cout:150,cont:6,cons:5,rdv:3,man:1},{id:'k3',nom:"Journée estimation du marché",type:"Journée estimation",date:'2026-10-17',q:0,cout:260,cont:22,cons:15,rdv:6,man:1},{id:'k4',nom:"Publicité réseaux sociaux",type:"Réseaux sociaux",date:'2026-10-05',q:8000,cout:300,cont:14,cons:3,rdv:2,man:0}],
+   ambs:[{id:'a1',nom:"Boulangerie Le Fournil",type:"Commerçant",cont:"Mme Leroy",app:5,man:1,merci:'2026-06-10'},{id:'a2',nom:"Étude de Me Garnier",type:"Notaire",cont:"",app:3,man:2,merci:'2026-10-20'},{id:'a3',nom:"Gardien résidence Les Cèdres",type:"Gardien d'immeuble",cont:"M. Sow",app:4,man:1,merci:''}]})},
+ {id:'s4',titre:"Le dossier de mandat de Mme Roche",entreprise:"Agence du Parc (immobilier)",
+  ctx:"Mme Roche confie à l'agence la vente de sa maison de 1962 (DPE E, chauffage au gaz, installation électrique d'origine, tout-à-l'égout, zone de bruit de l'aérodrome). Elle apporte les documents de sa précédente tentative de vente. Nous sommes le 13 novembre 2026 (onglet 5).",
+  q:["Quels diagnostics sont obligatoires pour cette maison ? Pourquoi pas de plomb ni de Carrez ?","Lesquels sont encore valables au 13/11/2026 ? Calculez les dates de fin de validité.","Pourquoi faut-il un audit énergétique ? Combien de temps est-il valable ?","Rédigez le message à Mme Roche avec la liste de ce qui manque.","À quel moment l'état des risques doit-il être remis à un acheteur ?"],
+  points:["Plomb : seulement pour un logement construit avant 1949. Carrez : seulement pour un lot de copropriété.","DPE 10 ans (et réalisé après le 1er juillet 2021) ; gaz et électricité 3 ans pour une vente ; état des risques 6 mois ; amiante illimité si absence et réalisé après avril 2013.","Audit énergétique : maison ou immeuble à un seul propriétaire classé E, F ou G, valable 5 ans.","L'état des risques est remis dès la première visite."],
+  build:()=>({ref:'2026-11-13',dvf:[],dvfMeta:{},dpe:{},loy:{},regs:[],camps:[],ambs:[],obs:blank().obs,est:null,bail:blank().bail,dcur:'r1',dossiers:[{id:'r1',nom:'Mme Roche',adr:'14 rue du Parc, Villeneuve-du-Parc (fictif)',mand:'vente',bien:'maison',cons:'av97',dpe:'E',gaz:'p15',elec:'p15',ass:'coll',term:'non',bruit:'oui',docs:{dpe:{date:'2020-03-10'},amiante:{date:'2012-05-14',res:'abs'},gaz:{date:'2024-02-01'},elec:{date:'2023-06-01'},erp:{date:'2026-04-01'},bruit:{date:'2026-04-01'}},autres:{0:true,1:true,2:true}}]})}];
+function corrige(sc){const L=[];
+  if(sc.id==='s1'){const D=DV(),Y=years(),A=D.filter(r=>r[1]==='A'),M=D.filter(r=>r[1]==='M');const DP=S.dpe[comCode()],ra=rendBrut('A');if(DP)L.push("DPE : ("+(DP.lab.F)+" + "+(DP.lab.G)+") ÷ "+DP.n+" = "+pct(pFG(DP),0)+" des DPE réalisés en F ou G (pas de tout le parc).");if(ra)L.push("Rentabilité brute des appartements : "+num(ra.loy,1)+" × 12 ÷ "+eur0(ra.pm)+" = "+pct(ra.rb)+".","");L.push("PRIX MÉDIANS ("+D.length+" ventes, "+Y[0]+" à "+Y[Y.length-1]+")","- Appartements : "+eur0(med(A.map(pm2)))+" le m² ("+A.length+" ventes) ; moyenne "+eur0(A.reduce((s,r)=>s+pm2(r),0)/A.length),"- Maisons : "+eur0(med(M.map(pm2)))+" le m² ("+M.length+" ventes)");
+    ['A','M'].forEach(t=>{const a=med(D.filter(r=>r[1]===t&&r[0].startsWith(Y[0])).map(pm2)),b=med(D.filter(r=>r[1]===t&&r[0].startsWith(Y[Y.length-1])).map(pm2));L.push("- Évolution "+TL[t].toLowerCase()+"s : ("+eur0(b)+" − "+eur0(a)+") ÷ "+eur0(a)+" = "+(b>a?'+':'')+pct((b-a)/a))});
+    const R=rues().slice().sort((a,b)=>b.pm-a.pm);L.push("","RUES (au moins 5 ventes)",...R.slice(0,4).map(x=>"- "+x.v+" : "+eur0(x.pm)+" le m² ("+x.n+" ventes)"));
+    const E=estCalc();if(E.ok)L.push("","ESTIMATION 62 m², 3 pièces","- "+E.C.length+" ventes comparables · médiane "+eur0(E.m)+" le m²","- Fourchette : "+eur0(E.lo)+" à "+eur0(E.hi)+" ; valeur centrale "+eur0(E.mid))}
+  if(sc.id==='s2'){L.push("QUI PEUT-ON APPELER LE 13/11/2026 ?");S.regs.forEach(c=>L.push("- "+c.nom+" : "+canCall(c).t))}
+  if(sc.id==='s4'){const d=curD(),X=dossState(d);L.push("DIAGNOSTICS (vente d'une maison de 1962, DPE "+d.dpe+")",...X.L.map(x=>"- "+DIAG[x.k]+" : "+x.t+" ("+x.why+")"),"","Pas de plomb (construite après 1949), pas de Carrez (pas de copropriété), pas de termites (hors zone).","","MESSAGE",dossMsg(d,X))}
+  if(sc.id==='s3'){const C=bailCalc();L.push("BAILLEUR (classe "+C.b.dpe+")","- Location possible sans travaux jusqu'au "+fr(C.ban)+" : "+num(C.keep.mLoc,0)+" mois sur la période","- Vendre maintenant : 168 000 × (1 − 5 %) = "+eur0(C.sell.tot),"- Louer sans travaux : 780 × "+num(C.keep.mLoc,0)+" − 1 900 × 5 + vente décotée "+eur0(C.keep.fin)+" = "+eur0(C.keep.tot),"- Rénover : 780 × 56 − 9 500 − 15 000 + "+eur0(C.reno.fin)+" = "+eur0(C.reno.tot),"","CAMPAGNES");S.camps.forEach(k=>L.push("- "+k.nom+" : "+eur0(k.cout)+" ÷ "+k.man+" mandat(s) = "+(k.man?eur0(k.cout/k.man):"aucun mandat")));L.push("- Réseau d'ambassadeurs : "+S.ambs.reduce((s,a)=>s+a.man,0)+" mandats pour un coût quasi nul (remerciements)")}
+  return L.join("\n")}
+
+
+/* ============ socle commun : état, cas, réglages ============ */
+let settings=Object.assign({shop:"",ville:"",eleve:"",classe:"",color:DEFAULT_COLOR},SETTINGS_DEF,LS.get(PFX+'_settings',{}));
+let mode=LS.get(PFX+'_mode','pro'),customScen=LS.get(PFX+'_scen',[]);
+let S=null,curScen=null,corrShown=false;
+const key=()=>PFX+'_data_'+mode;
+function load(){S=Object.assign(blank(),LS.get(key(),{}));if(typeof migrate==='function')migrate()}
+function save(){LS.set(key(),S)}
+const today=()=>S&&S.ref?S.ref:realToday();
+function exportJSON(){download(PFX_NAME+'-'+(mode==='classe'?'classe-':'')+realToday()+'.json',JSON.stringify({app:APP,version:"2026-11",data:S},null,2),'application/json')}
+function clearAll(){ask('Effacer toutes les données de ce mode ? Pensez à sauvegarder avant.',()=>{S=blank();save();renderAll();toast('Tout est effacé')})}
+function allScen(){return BUILTIN.concat(customScen)}
+function renderScen(){
+  el('scenList').innerHTML=allScen().map(s=>'<div class="item"><div class="h"><div><b>'+esc(s.titre)+'</b><div class="small muted">'+esc(s.entreprise||'')+(s.custom?' · ajouté':'')+'</div></div><div style="display:flex;gap:4px;flex:none"><button class="btn sm pri" onclick="loadScen(\''+s.id+'\')">Commencer</button>'+(s.custom?'<button class="btn sm red" onclick="delScen(\''+s.id+'\')">✕</button>':'')+'</div></div></div>').join('');
+  const b=el('scenBox');if(!curScen||mode!=='classe'){b.innerHTML='<p class="muted" style="margin:0">Choisissez un cas ci-dessus.</p>';return}
+  b.innerHTML='<h2>🎓 '+esc(curScen.titre)+'</h2><p style="margin:0 0 6px">'+esc(curScen.ctx||'')+'</p><div class="msgbox" style="background:#fff">'+curScen.q.map((x,i)=>(i+1)+". "+esc(x)).join("\n")+'</div><p class="small muted">'+esc(SCEN_HINT)+'</p><label class="f">Mes réponses</label><textarea id="sRep" style="min-height:140px">'+esc(LS.get(PFX+'_rep_'+curScen.id,''))+'</textarea><div class="actions"><button class="btn amb" onclick="showCorr()">Voir le corrigé</button><button class="btn pri" onclick="exportTrace()">Exporter ma trace</button></div><div id="sCorr"></div>';
+  el('sRep').addEventListener('input',e=>LS.set(PFX+'_rep_'+curScen.id,e.target.value));if(corrShown)showCorr();
+}
+function loadScen(id){const sc=allScen().find(x=>x.id===id);if(!sc)return;mode='classe';LS.set(PFX+'_mode',mode);
+  const st=sc.state?JSON.parse(JSON.stringify(sc.state)):sc.build();S=Object.assign(blank(),st);if(typeof migrate==='function')migrate();save();curScen=sc;corrShown=false;if(typeof onScenLoad==='function')onScenLoad(sc);renderAll();setTimeout(()=>el('scenBox').scrollIntoView({behavior:'smooth'}),50);toast('Cas chargé dans le mode classe')}
+function showCorr(){if(!curScen)return;corrShown=true;el('sCorr').innerHTML='<div class="corr" style="white-space:pre-wrap"><b>Corrigé</b>\n'+esc(corrige(curScen)+"\n\nPOINTS ATTENDUS\n"+(curScen.points||[]).map(x=>"- "+x).join("\n")+(curScen.corr?"\n"+curScen.corr:""))+'</div>'}
+function exportTrace(){if(!curScen)return;const t=[APP.toUpperCase()+" · TRACE D'ENTRAÎNEMENT","Élève : "+(settings.eleve||"[prénom]")+" · Classe : "+(settings.classe||"[classe]")+" · "+fr(realToday()),"Cas : "+curScen.titre,"","QUESTIONS",...curScen.q.map((x,i)=>(i+1)+". "+x),"","MES RÉPONSES",el('sRep').value||"(vide)","","Corrigé consulté avant l'export : "+(corrShown?"oui":"non")].join("\n");download('trace-'+PFX_NAME+'-'+(settings.eleve||'eleve').replace(/\s+/g,'-')+'-'+curScen.id+'-'+realToday()+'.txt',t)}
+function addScen(){if(mode!=='classe'){toast('Passez d\'abord en mode classe');return}const sc={id:'u'+Date.now().toString(36),custom:true,titre:el('nTitre').value.trim(),entreprise:settings.shop||'',ctx:el('nCtx').value.trim(),q:el('nQ').value.split('\n').map(x=>x.trim()).filter(Boolean),points:[],corr:el('nCorr').value.trim(),state:Object.assign(JSON.parse(JSON.stringify(S)),{ref:S.ref||realToday()})};if(!sc.titre||!sc.q.length){toast('Il faut un titre et au moins une question');return}customScen.push(sc);LS.set(PFX+'_scen',customScen);renderScen();toast('Cas enregistré');['nTitre','nCtx','nQ','nCorr'].forEach(i=>el(i).value='')}
+function delScen(id){ask('Supprimer ce cas ?',()=>{customScen=customScen.filter(s=>s.id!==id);LS.set(PFX+'_scen',customScen);if(curScen&&curScen.id===id)curScen=null;renderScen()})}
+function exportScen(){if(!customScen.length){toast('Aucun cas ajouté pour l\'instant');return}download(PFX_NAME+'-cas-'+realToday()+'.json',JSON.stringify({app:APP,type:"cas",cas:customScen},null,2),'application/json')}
+el('impScen').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const j=JSON.parse(rd.result);let k=0;(j.cas||[]).forEach(s=>{if(s&&s.titre&&Array.isArray(s.q)&&s.state){s.id='u'+Date.now().toString(36)+k;s.custom=true;customScen.push(s);k++}});LS.set(PFX+'_scen',customScen);renderScen();toast(k+' cas importé(s)')}catch(err){toast('Fichier non reconnu')}};rd.readAsText(f);e.target.value=''});
+el('impJSON').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const j=JSON.parse(rd.result);if(!j.data||j.app!==APP)throw 0;S=Object.assign(blank(),j.data);if(typeof migrate==='function')migrate();save();renderAll();toast('Données restaurées')}catch(err){toast('Fichier non reconnu')}};rd.readAsText(f);e.target.value=''});
+function go(t){TABS.forEach(x=>{el('tab-'+x).classList.toggle('on',x===t);el('t-'+x).classList.toggle('on',x===t);el('b-'+x).classList.toggle('on',x===t)});
+  if(typeof onTab==='function')onTab(t);try{history.replaceState(null,'','#'+t)}catch(e){}window.scrollTo(0,0)}
+function setMode(m){mode=m;LS.set(PFX+'_mode',m);if(m==='pro')curScen=null;load();if(typeof onModeChange==='function')onModeChange();renderAll()}
+const SET_FIELDS=[['cShop','shop'],['cVille','ville'],['cEleve','eleve'],['cClasse','classe']].concat(EXTRA_SET);
+function applySettings(){
+  document.documentElement.style.setProperty('--brand',COLORS[settings.color]||COLORS[DEFAULT_COLOR]);
+  el('hdrShop').textContent=settings.shop||'Entreprise partenaire';
+  el('bnShop').textContent=settings.shop?'Outil configuré pour '+settings.shop+(settings.ville?' ('+settings.ville+')':''):'Outil configuré pour votre entreprise';
+  el('bnStudent').textContent=settings.eleve?'Présenté par '+settings.eleve+(settings.classe?', '+settings.classe:'')+', Bac Pro MCV':'Présenté par un élève de Bac Pro MCV';
+  SET_FIELDS.forEach(([i,k])=>{if(el(i))el(i).value=settings[k]==null?'':settings[k]});
+  el('pColor').innerHTML=Object.keys(COLORS).map(c=>'<button class="'+(c===settings.color?'on':'')+'" style="'+(c===settings.color?'background:'+COLORS[c]+';border-color:'+COLORS[c]:'')+'" onclick="settings.color=\''+c+'\';applySettings()">'+c+'</button>').join('');
+  el('pitchTxt').innerHTML='Bonjour, je suis <em>'+esc(settings.eleve||'[prénom]')+'</em>, en Bac Pro Commerce et vente au lycée Georges Brassens, à Villepinte. '+PITCH()+' Il est gratuit et les données restent chez vous. Je vous montre ? Et si vous cherchez un stagiaire'+(settings.shop?' chez <em>'+esc(settings.shop)+'</em>':'')+', '+PITCH_END+'.';
+}
+function saveSettings(){SET_FIELDS.forEach(([i,k])=>{if(el(i))settings[k]=el(i).value.trim()});LS.set(PFX+'_settings',settings);applySettings();renderAll();toast('Réglages enregistrés')}
+function renderAll(){
+  document.body.classList.toggle('classe',mode==='classe');
+  el('mPro').classList.toggle('on',mode==='pro');el('mClasse').classList.toggle('on',mode==='classe');
+  el('classeTag').textContent=curScen?'MODE CLASSE · '+curScen.titre:'MODE CLASSE · données fictives';
+  applySettings();renderApp();renderScen();
+}
+function demo(){loadScen(DEMO_SCEN());curScen=null;renderAll();go(DEMO_TAB);toast('Démo sur des données fictives (mode classe). Vos vraies données sont dans le mode Entreprise.')}
+load();if(typeof init==='function')init();renderAll();
+(function(){const h=(location.hash||'').slice(1);go(TABS.includes(h)?h:TABS[0])})();
+
+</script>
+</body>
+</html>
